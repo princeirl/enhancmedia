@@ -1,0 +1,24 @@
+{
+  // Enhanc Media website — one Worker: static assets from `out/`, plus /api/contact.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "enhancmedia-website",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  // Inquiries are delivered by email to a verified destination address on this account.
+  // Replace the address once the business mailbox is confirmed (README → "Inquiry form").
+  "send_email": [{ "name": "SEND_EMAIL", "destination_address": "inquiries@REPLACE-WITH-DOMAIN" }],
+  "ratelimits": [{ "name": "CONTACT_LIMITER", "namespace_id": "1001", "simple": { "limit": 5, "period": 60 } }],
+  "vars": {
+    "CONTACT_TO": "inquiries@REPLACE-WITH-DOMAIN",
+    "CONTACT_FROM": "website@REPLACE-WITH-DOMAIN",
+    "ALLOWED_ORIGINS": "https://REPLACE-WITH-DOMAIN,https://www.REPLACE-WITH-DOMAIN"
+  },
+  // Secret, set with `wrangler secret put TURNSTILE_SECRET` — never committed.
+  "observability": { "enabled": true }
+}

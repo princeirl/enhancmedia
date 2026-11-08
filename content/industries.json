@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "businesses-startups",
+    "title": "Businesses & Startups",
+    "short": "For founders and growing companies that need to be taken seriously from the start, and to grow with focus.",
+    "headline": "A credible brand and a clear path to growth, from the outset.",
+    "understanding": "Early-stage and growing businesses compete for attention against larger, better-known names, usually with less time and fewer resources. What they need is focus: a clear position, a credible identity and marketing that produces enquiries rather than activity for its own sake.",
+    "challenges": [
+      "Establishing credibility with customers, partners and investors early on.",
+      "Explaining a new product or service simply and convincingly.",
+      "Choosing where to spend limited marketing time and budget.",
+      "Building systems that will still work as the company grows."
+    ],
+    "services": ["branding-identity", "web-development", "digital-marketing", "growth-solutions"],
+    "solutions": [
+      { "title": "A foundation that scales", "text": "Positioning, identity and a website built to grow with the company rather than be replaced by it." },
+      { "title": "Focused acquisition", "text": "A small number of well-chosen channels, run properly, instead of a presence everywhere." },
+      { "title": "Measured progress", "text": "Simple, honest reporting tied to enquiries and revenue, not vanity metrics." }
+    ],
+    "approach": "We work in proportion to your stage. Early on that usually means a strong core identity, a website that converts and one or two marketing channels done well, with the plan expanding as the business does."
+  },
+  {
+    "slug": "corporations",
+    "title": "Corporations & Established Brands",
+    "short": "For organizations with a reputation to maintain, several audiences to address and standards to meet.",
+    "headline": "Consistency, clarity and care at the scale of an established organization.",
+    "understanding": "Established organizations address many audiences at once: customers, employees, investors, partners, regulators and the media. Their challenge is less about being seen and more about being consistent, accurate and current, across many teams, markets and channels.",
+    "challenges": [
+      "Keeping brand and messaging consistent across divisions, markets and partners.",
+      "Refreshing a mature brand without losing the recognition it has earned.",
+      "Communicating change, such as growth, restructuring or new direction, clearly.",
+      "Meeting governance, approval and compliance requirements in all communication."
+    ],
+    "services": ["branding-identity", "pr-strategic-communications", "digital-marketing", "web-development"],
+    "solutions": [
+      { "title": "Brand governance", "text": "Guidelines, templates and creative direction that keep large teams aligned." },
+      { "title": "Corporate communications", "text": "Announcements, media relations and stakeholder messaging handled with care." },
+      { "title": "Digital modernization", "text": "Corporate websites and digital channels brought up to current standards." }
+    ],
+    "approach": "We fit into your approval processes rather than working around them. Work is planned with the relevant stakeholders, documented clearly and delivered to the standard an established organization expects."
+  },
+  {
+    "slug": "creators-influencers",
+    "title": "Creators & Influencers",
+    "short": "For creators building an audience, a recognizable identity and partnerships that last.",
+    "headline": "From a growing audience to a lasting creative brand.",
+    "understanding": "Creators build trust with an audience one piece of content at a time. As that audience grows, so do the demands: consistent quality, a recognizable identity, brand partnerships and the business side of a creative career, often managed alone.",
+    "challenges": [
+      "Defining a niche and identity that stand out in a crowded space.",
+      "Keeping content consistent without losing authenticity or burning out.",
+      "Presenting professionally to potential brand partners.",
+      "Building a presence that does not depend on a single platform."
+    ],
+    "services": ["personal-branding", "digital-marketing", "branding-identity", "web-development"],
+    "solutions": [
+      { "title": "Creator positioning", "text": "A clear niche, voice and visual identity that audiences and brands recognize." },
+      { "title": "Content systems", "text": "Planning and production support that keeps output consistent and sustainable." },
+      { "title": "An owned presence", "text": "A personal website and channels you control, alongside the platforms you use." }
+    ],
+    "approach": "We protect what makes your content yours. Our role is to sharpen positioning, add structure and professional presentation, and support the parts of the work that take time away from creating."
+  },
+  {
+    "slug": "celebrities-public-figures",
+    "title": "Celebrities & Public Figures",
+    "short": "For public figures whose image, reputation and privacy all need careful, discreet management.",
+    "headline": "A public image managed with discretion and consistency.",
+    "understanding": "Public figures live with constant attention. Every appearance, statement and post can be scrutinized and shared widely. Managing that presence well means consistency, preparation and judgement, along with respect for privacy and confidentiality.",
+    "challenges": [
+      "Maintaining a consistent public image across media, events and digital channels.",
+      "Responding appropriately when stories or speculation circulate.",
+      "Balancing public visibility with personal privacy.",
+      "Coordinating communication across managers, publicists and partners."
+    ],
+    "services": ["personal-branding", "pr-strategic-communications", "digital-marketing"],
+    "solutions": [
+      { "title": "Image strategy", "text": "A clear sense of how you want to be seen, applied consistently everywhere." },
+      { "title": "Media and reputation", "text": "Media relations, statements and reputation monitoring handled with care." },
+      { "title": "Digital presence", "text": "Social channels and digital assets managed to your standards and approvals." }
+    ],
+    "approach": "Discretion is the starting point. Information is shared on a need-to-know basis, access to accounts stays under your control, and nothing is published without your approval."
+  },
+  {
+    "slug": "politicians-political-organizations",
+    "title": "Politicians & Political Organizations",
+    "short": "For leaders and organizations that need clear, lawful and responsible public communication.",
+    "headline": "Communicating positions and public work clearly, and within the law.",
+    "understanding": "Political leaders and organizations must explain their positions, record and plans to large and varied constituencies, often under time pressure and close scrutiny. Effective communication here must also be accurate, transparent and fully compliant with the law.",
+    "challenges": [
+      "Reaching diverse constituencies with clear, relevant information.",
+      "Producing accurate content quickly during campaign periods.",
+      "Maintaining a consistent presence between elections.",
+      "Complying with election law, codes of conduct and platform policies."
+    ],
+    "services": ["political-marketing-communications", "pr-strategic-communications", "digital-marketing", "branding-identity"],
+    "solutions": [
+      { "title": "Communication strategy", "text": "Messaging and channel plans aligned with objectives and the electoral calendar." },
+      { "title": "Campaign identity", "text": "A consistent visual and verbal identity for leaders, campaigns and organizations." },
+      { "title": "Compliant outreach", "text": "Digital and media outreach reviewed against applicable law and policy." }
+    ],
+    "approach": "We work only with accurate information and lawful methods. Compliance review is part of every plan, and we do not create misinformation, fabricated endorsements or manipulative targeting."
+  },
+  {
+    "slug": "educational-institutions",
+    "title": "Educational Institutions",
+    "short": "For schools, colleges, universities and training providers communicating with students, families and partners.",
+    "headline": "Presenting an institution to the people choosing their future.",
+    "understanding": "Educational institutions speak to several audiences with very different needs: prospective students, parents and families, current students, alumni, faculty and partners. Each decision to enrol is significant, and the information behind it must be clear, accurate and easy to find.",
+    "challenges": [
+      "Differentiating an institution in a competitive admissions landscape.",
+      "Presenting programmes, facilities and outcomes clearly and accurately.",
+      "Communicating consistently across departments and campuses.",
+      "Engaging prospective students on the channels they actually use."
+    ],
+    "services": ["branding-identity", "web-development", "digital-marketing", "pr-strategic-communications"],
+    "solutions": [
+      { "title": "Institutional identity", "text": "A brand that reflects the institution's character and values, applied consistently." },
+      { "title": "Admissions communication", "text": "Websites and campaigns that help prospective students and families find what they need." },
+      { "title": "Community engagement", "text": "Content that keeps students, alumni and partners connected to the institution." }
+    ],
+    "approach": "We put the prospective student's questions first. Clear information, honest presentation and an easy path to enquiry or application matter more than slogans."
+  },
+  {
+    "slug": "ngos-social-organizations",
+    "title": "NGOs & Social Organizations",
+    "short": "For organizations working for social good that need to build awareness, trust and support.",
+    "headline": "Helping important work reach the people who can support it.",
+    "understanding": "Social organizations often do essential work with limited communications capacity. They must build awareness, earn the trust of donors and partners, and report transparently, while representing the communities they serve with dignity.",
+    "challenges": [
+      "Raising awareness of a cause in a crowded attention space.",
+      "Building trust with donors, partners and volunteers.",
+      "Telling stories of impact responsibly and with consent.",
+      "Achieving results with limited budgets and teams."
+    ],
+    "services": ["branding-identity", "digital-marketing", "pr-strategic-communications", "web-development"],
+    "solutions": [
+      { "title": "Mission clarity", "text": "A clear, compelling expression of what the organization does and why it matters." },
+      { "title": "Supporter engagement", "text": "Campaigns and content that build lasting relationships with supporters." },
+      { "title": "Transparent reporting", "text": "Websites and materials that present work and impact honestly." }
+    ],
+    "approach": "We respect the communities an organization serves. Stories are told with consent and dignity, claims are accurate, and plans are shaped to the resources available."
+  }
+]

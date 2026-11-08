@@ -1,0 +1,254 @@
+[
+  {
+    "slug": "digital-marketing",
+    "title": "Digital Marketing",
+    "short": "Planned, measured digital activity across social, search and paid media, built around what your audience actually responds to.",
+    "headline": "Digital activity with a clear purpose and a measurable direction.",
+    "intro": "Most organizations are already active online. Far fewer can say exactly what that activity is meant to achieve. We plan, run and refine digital marketing around defined objectives, so that every channel, post and campaign has a reason to exist and a way to be judged.",
+    "problems": [
+      "Posting regularly without a clear objective or audience in mind.",
+      "Advertising spend that is difficult to connect to enquiries or sales.",
+      "Channels managed in isolation, each telling a slightly different story.",
+      "Content produced in bursts, without a plan that holds it together.",
+      "Reports full of numbers that do not inform the next decision."
+    ],
+    "offerings": [
+      { "title": "Social media strategy", "text": "Channel choices, content pillars and publishing rhythm defined by your objectives and audience." },
+      { "title": "Social media management", "text": "Day-to-day planning, publishing and community management carried out to an agreed standard." },
+      { "title": "Paid advertising", "text": "Campaign structure, audience definition, creative and budget management across paid platforms." },
+      { "title": "Digital campaign management", "text": "End-to-end planning and coordination of time-bound campaigns across channels." },
+      { "title": "Content strategy", "text": "What to say, in which formats, for whom and how often, written down and agreed." },
+      { "title": "Audience development", "text": "Building a relevant, engaged audience rather than an inflated follower count." },
+      { "title": "Performance analysis", "text": "Regular reporting that explains what happened, why it matters and what changes next." },
+      { "title": "Search engine optimization", "text": "Technical, content and structural improvements that help the right people find you." }
+    ],
+    "process": [
+      { "title": "Audit", "text": "We review your current channels, content, audience and results to establish an honest starting point." },
+      { "title": "Plan", "text": "We set objectives, choose channels and agree a content and campaign plan with clear measures." },
+      { "title": "Launch", "text": "We produce, publish and manage activity to the plan, with your approvals built in." },
+      { "title": "Measure and refine", "text": "We report regularly and adjust targeting, content and spend based on what performs." }
+    ],
+    "faqs": [
+      { "q": "Which platforms do you work on?", "a": "We recommend channels based on where your audience is and what you want to achieve, rather than being present everywhere by default. The final mix is agreed with you during planning." },
+      { "q": "Do you manage advertising budgets?", "a": "We plan and manage campaigns on advertising accounts that remain in your ownership. Media spend is agreed in advance and reported transparently." },
+      { "q": "How soon will we see results?", "a": "That depends on the objective, the channel and your starting point. We agree realistic milestones at the outset and report against them, rather than promising outcomes no one can control." },
+      { "q": "Can you work alongside our in-house team?", "a": "Yes. We can take on the full scope, or support specific areas such as strategy, paid media or reporting." }
+    ]
+  },
+  {
+    "slug": "branding-identity",
+    "title": "Branding & Identity",
+    "short": "Strategy, positioning and visual identity that make an organization clear, distinctive and consistent.",
+    "headline": "A brand people recognize, understand and remember.",
+    "intro": "A brand is more than a logo. It is the sum of what an organization stands for, how it speaks and how it looks, every time someone encounters it. We help define each of these deliberately, then translate them into an identity system your teams can use with confidence.",
+    "problems": [
+      "A visual identity that no longer reflects what the organization has become.",
+      "Inconsistent use of logos, colours and messaging across teams and channels.",
+      "Difficulty explaining what makes you different in a single sentence.",
+      "A new venture that needs a credible identity from the first day.",
+      "Expansion into markets or audiences that the current brand does not serve well."
+    ],
+    "offerings": [
+      { "title": "Brand strategy", "text": "Purpose, audiences, competitive context and the role the brand must play." },
+      { "title": "Brand positioning", "text": "A clear statement of where you stand and why it matters to the people you serve." },
+      { "title": "Brand identity development", "text": "The complete system: brand architecture, voice, visual language and application." },
+      { "title": "Logo and visual identity", "text": "Logo, colour, typography, imagery and graphic elements designed to work together." },
+      { "title": "Brand communication", "text": "Key messages, tone of voice and narrative that keep communication consistent." },
+      { "title": "Creative direction", "text": "Guidance for campaigns, shoots and content, so every output stays true to the brand." },
+      { "title": "Brand guidelines", "text": "A practical reference that helps teams and partners apply the brand correctly." }
+    ],
+    "process": [
+      { "title": "Discover", "text": "Conversations, research and a review of your current brand, market and competitors." },
+      { "title": "Define", "text": "Positioning, personality and messaging agreed before any design begins." },
+      { "title": "Design", "text": "Identity concepts developed, refined and tested in real applications." },
+      { "title": "Deploy", "text": "Final assets, guidelines and support as the brand is rolled out." }
+    ],
+    "faqs": [
+      { "q": "How long does a brand identity project take?", "a": "It depends on scope. A focused identity project is shorter than a full strategy and identity programme. We confirm a schedule after the initial discovery conversation." },
+      { "q": "Can you refresh our existing brand rather than replace it?", "a": "Yes. Where your existing brand carries recognition and goodwill, evolving it is often the better choice, and we will say so." },
+      { "q": "What do we receive at the end?", "a": "Final logo and identity files in the formats you need, brand guidelines and any agreed applications, with ownership of the final work transferred to you." }
+    ]
+  },
+  {
+    "slug": "personal-branding",
+    "title": "Personal Branding",
+    "short": "Clear, credible positioning for founders, professionals, creators and public figures.",
+    "headline": "Your reputation, presented with clarity and intent.",
+    "intro": "For founders, professionals, creators and public figures, reputation is built in public, one post, interview and appearance at a time. We help you decide what you want to be known for, and build a presence that reflects it accurately and consistently.",
+    "problems": [
+      "Expertise that is real, but not visible to the people who matter.",
+      "An online presence that feels scattered or out of date.",
+      "Uncertainty about what to share publicly and what to keep private.",
+      "Limited time to plan and produce content consistently.",
+      "A change in role or career that the public profile has not caught up with."
+    ],
+    "offerings": [
+      { "title": "Personal brand strategy", "text": "Your positioning, audiences, themes and the boundaries you want to keep." },
+      { "title": "Digital presence development", "text": "Profiles, website and channels set up to present you accurately and professionally." },
+      { "title": "Content positioning", "text": "The subjects and perspectives you will be known for, and the formats that suit you." },
+      { "title": "Social media management", "text": "Planning, writing support and publishing handled in your voice and to your standards." },
+      { "title": "Public image development", "text": "Consistent presentation across appearances, media and digital channels." },
+      { "title": "Thought leadership communication", "text": "Articles, talks and commentary that share your expertise with substance." },
+      { "title": "Creator positioning", "text": "Niche, audience and partnership readiness for content creators." }
+    ],
+    "process": [
+      { "title": "Understand", "text": "We learn about your work, ambitions, audiences and the limits you want to set." },
+      { "title": "Position", "text": "We define what you stand for and how that should come across." },
+      { "title": "Build", "text": "We set up or refine your channels and develop a sustainable content plan." },
+      { "title": "Sustain", "text": "We support ongoing content and presence, reviewing direction as your goals evolve." }
+    ],
+    "faqs": [
+      { "q": "Will the content sound like me?", "a": "It should. We work from conversations with you, review drafts together, and nothing is published in your name without your approval." },
+      { "q": "How much of my time will this require?", "a": "We keep it focused: short, regular sessions for input and approvals, with planning and production handled by us." },
+      { "q": "Who controls my accounts?", "a": "You do. Any access we need is granted by you, on terms you set, and ownership always remains with you." },
+      { "q": "Is the engagement confidential?", "a": "Yes. Personal information and unpublished plans are treated as confidential." }
+    ]
+  },
+  {
+    "slug": "pr-strategic-communications",
+    "title": "PR & Strategic Communications",
+    "short": "Media relations, reputation and strategic messaging for the moments that matter, planned and unplanned.",
+    "headline": "Communication that earns attention and protects reputation.",
+    "intro": "How an organization is described by others shapes how far it is trusted. We help you prepare your story, engage the media and your stakeholders responsibly, and respond with care when circumstances change.",
+    "problems": [
+      "A strong story that is not reaching the media or the right stakeholders.",
+      "Announcements that receive little attention, or are misunderstood.",
+      "No prepared approach for difficult questions or a sudden issue.",
+      "Inconsistent messages from different spokespeople.",
+      "Public conversation about the organization that is going unaddressed."
+    ],
+    "offerings": [
+      { "title": "Public relations strategy", "text": "Objectives, audiences, messages and the channels through which to reach them." },
+      { "title": "Media relations", "text": "Constructive, professional relationships with relevant journalists and outlets." },
+      { "title": "Brand communication", "text": "Consistent corporate messaging across announcements, statements and channels." },
+      { "title": "Reputation management", "text": "Monitoring perception and addressing issues before they escalate." },
+      { "title": "Press releases", "text": "Clear, newsworthy releases, written and shared with suitable media." },
+      { "title": "Media outreach", "text": "Targeted pitching of stories, interviews and commentary opportunities." },
+      { "title": "Crisis communication advisory", "text": "Preparation, holding statements and guidance when an issue arises." },
+      { "title": "Strategic storytelling", "text": "Shaping the narrative that connects your work to what your audiences care about." }
+    ],
+    "process": [
+      { "title": "Assess", "text": "We review how you are currently perceived and where the opportunities and risks lie." },
+      { "title": "Shape the narrative", "text": "We develop key messages, stories and spokesperson guidance." },
+      { "title": "Engage", "text": "We carry out media relations, outreach and announcements to an agreed plan." },
+      { "title": "Monitor", "text": "We track coverage and conversation, and advise on the next steps." }
+    ],
+    "faqs": [
+      { "q": "Can you guarantee media coverage?", "a": "No responsible agency can. Editorial decisions belong to journalists. We give your story the best possible chance through relevance, timing and careful preparation." },
+      { "q": "Can you support us in an urgent situation?", "a": "Yes. Crisis communication advisory includes holding statements and spokesperson guidance. Preparation in advance makes that support considerably more effective." },
+      { "q": "Do you work on ongoing communications or individual announcements?", "a": "Both are possible. We will recommend the arrangement that fits your objectives once we understand them." }
+    ]
+  },
+  {
+    "slug": "political-marketing-communications",
+    "title": "Political Marketing & Communications",
+    "short": "Responsible, lawful communication strategy for political leaders, campaigns and organizations.",
+    "headline": "Clear political communication, delivered responsibly.",
+    "intro": "Political communication carries particular responsibility. Citizens deserve clear and truthful information, and leaders and organizations need to communicate their positions effectively within the law. We support political leaders, campaigns and organizations with strategy, content and outreach that meet both expectations.",
+    "problems": [
+      "Policy positions and public work that are not reaching constituents clearly.",
+      "Campaigns that need a consistent identity and message across many channels.",
+      "Limited capacity to produce timely, accurate content during a campaign.",
+      "Difficulty maintaining a public presence between election cycles.",
+      "Navigating platform rules and advertising regulations for political content."
+    ],
+    "offerings": [
+      { "title": "Political communication strategy", "text": "Messaging, audiences and channel planning aligned with campaign objectives." },
+      { "title": "Campaign branding", "text": "Identity and visual systems for leaders, campaigns and organizations." },
+      { "title": "Public communication", "text": "Speeches, statements and announcements written for clarity." },
+      { "title": "Digital outreach", "text": "Lawful, transparent digital engagement with constituents and supporters." },
+      { "title": "Campaign content development", "text": "Video, graphic and written content produced to campaign timelines." },
+      { "title": "Public image and reputation management", "text": "Consistent presentation of a leader or organization across media." },
+      { "title": "Voter information and engagement", "text": "Accurate information about positions, events and civic participation." },
+      { "title": "Political media strategy", "text": "Media planning, interviews and press engagement during and between campaigns." }
+    ],
+    "commitments": [
+      "All political work complies with applicable election laws, the guidelines of election authorities, platform policies and advertising regulations.",
+      "We do not create deceptive campaigns or misinformation.",
+      "We do not fabricate endorsements, quotations or testimonials.",
+      "We do not use manipulative or unlawful targeting.",
+      "Political advertising is labelled and disclosed as the law and platforms require."
+    ],
+    "process": [
+      { "title": "Brief and research", "text": "We understand the leader or organization, the constituency and the issues that matter." },
+      { "title": "Strategy", "text": "We define messages, audiences, channels and a calendar aligned with the campaign." },
+      { "title": "Content and outreach", "text": "We produce and publish content and manage outreach to plan." },
+      { "title": "Review and compliance", "text": "Content and advertising are checked against applicable law and policy before publication." }
+    ],
+    "faqs": [
+      { "q": "How do you ensure compliance?", "a": "Compliance is built into planning and review. Content and advertising are checked against applicable election law, codes of conduct, platform policies and disclosure requirements before anything is published." },
+      { "q": "Do you work between elections?", "a": "Yes. Consistent, informative communication between campaigns is often as important as activity during them." },
+      { "q": "Is our engagement confidential?", "a": "Yes. Campaign strategy and internal information are treated as strictly confidential." }
+    ]
+  },
+  {
+    "slug": "web-development",
+    "title": "Web Development",
+    "short": "Websites designed and built to present an organization well and work properly, on every device.",
+    "headline": "Websites that represent you well and work without compromise.",
+    "intro": "For many prospective clients, your website is the first serious impression of your organization. We design and build websites that look considered, load quickly, read clearly and make it easy for visitors to take the next step.",
+    "problems": [
+      "A website that looks dated or no longer reflects the brand.",
+      "Slow pages and poor performance on mobile devices.",
+      "Visitors who cannot find information or a clear way to get in touch.",
+      "Content that is difficult for your team to update.",
+      "Low visibility in search for the services you offer."
+    ],
+    "offerings": [
+      { "title": "Business websites", "text": "Professional websites that explain what you do and help visitors get in touch." },
+      { "title": "Corporate websites", "text": "Structured, multi-section websites for established organizations and groups." },
+      { "title": "Portfolio websites", "text": "Showcases for work, projects and creative output, presented with care." },
+      { "title": "Landing pages", "text": "Focused pages for campaigns, launches and specific audiences." },
+      { "title": "E-commerce websites", "text": "Online stores designed for clear browsing and straightforward checkout." },
+      { "title": "UI/UX design", "text": "Interface and experience design grounded in how people actually use a site." },
+      { "title": "Website redesign", "text": "Rebuilding an existing website around a stronger structure and identity." },
+      { "title": "Website maintenance", "text": "Updates, monitoring and improvements after launch." },
+      { "title": "Search optimization", "text": "Sound structure, metadata and performance that support search visibility." }
+    ],
+    "process": [
+      { "title": "Plan", "text": "Objectives, audiences, content and site structure agreed before design begins." },
+      { "title": "Design", "text": "Layouts and interface designed for desktop, tablet and mobile." },
+      { "title": "Build", "text": "Development with attention to performance, accessibility and security." },
+      { "title": "Launch and support", "text": "Testing, launch, training and ongoing maintenance as required." }
+    ],
+    "faqs": [
+      { "q": "Will we be able to update the website ourselves?", "a": "Yes. We set up content management suited to your needs and provide clear instructions for making updates." },
+      { "q": "Who owns the website and the domain?", "a": "You do. Domains, accounts and source code are registered to, and owned by, your organization." },
+      { "q": "Do you maintain websites after launch?", "a": "Yes. Website maintenance is one of our services and can be arranged once your site is live." },
+      { "q": "Will the website work on mobile devices?", "a": "Every website we build is designed for desktop, tablet and mobile from the start, not adapted as an afterthought." }
+    ]
+  },
+  {
+    "slug": "growth-solutions",
+    "title": "Growth Solutions",
+    "short": "Strategy and optimization that turn attention into enquiries, and enquiries into growth.",
+    "headline": "Growth built on understanding, not guesswork.",
+    "intro": "Growth rarely comes from a single tactic. It comes from understanding where opportunities are being lost, in visibility, in conversion or in follow-up, and improving each step deliberately. We help organizations find those points and act on them.",
+    "problems": [
+      "Steady attention or traffic that does not turn into enquiries.",
+      "Uncertainty about where leads come from, or why they do not progress.",
+      "Marketing activity that has reached a plateau.",
+      "Expansion plans without a clear acquisition strategy.",
+      "Decisions made on instinct rather than evidence."
+    ],
+    "offerings": [
+      { "title": "Growth strategy", "text": "A prioritized plan for reaching, converting and retaining the right customers." },
+      { "title": "Lead generation", "text": "Campaigns and channels designed to produce qualified enquiries." },
+      { "title": "Audience development", "text": "Growing a relevant audience that can become customers or supporters." },
+      { "title": "Marketing optimization", "text": "Improving the efficiency and effectiveness of existing marketing activity." },
+      { "title": "Conversion improvement", "text": "Refining pages, offers and journeys so more visitors take the next step." },
+      { "title": "Digital growth consulting", "text": "Independent advice on priorities, tools and team capability." }
+    ],
+    "process": [
+      { "title": "Diagnose", "text": "We map the journey from first contact to enquiry and find where opportunities are lost." },
+      { "title": "Prioritize", "text": "We rank improvements by likely impact and effort." },
+      { "title": "Test", "text": "We implement changes in measured steps and compare the results." },
+      { "title": "Scale", "text": "We extend what works and retire what does not." }
+    ],
+    "faqs": [
+      { "q": "How is this different from digital marketing?", "a": "Digital marketing focuses on running channels and campaigns. Growth solutions look across the whole journey, from first contact to enquiry, to find and remove the points where opportunities are lost." },
+      { "q": "Do we need a large budget?", "a": "Not necessarily. The work often begins by making better use of the channels and audiences you already have." },
+      { "q": "How do you measure progress?", "a": "We agree a small number of meaningful measures at the start, such as qualified enquiries or conversion rate, and report against them." }
+    ]
+  }
+]

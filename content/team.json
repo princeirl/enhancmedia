@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "prince-yadav",
+    "status": "published",
+    "name": "Prince Yadav",
+    "role": "Founder & CEO",
+    "photo": null,
+    "bio": null,
+    "summary": null,
+    "linkedin": null,
+    "note": "Photograph, biography and profile link to be supplied by the founder (brief §19, stage 2)."
+  },
+  {
+    "slug": "leadership-member-2",
+    "status": "draft",
+    "name": "Leadership member",
+    "role": "Designation to be confirmed",
+    "photo": null,
+    "bio": null,
+    "summary": "A 10–15-word professional introduction will appear here once supplied.",
+    "linkedin": null,
+    "note": "Placeholder. Name, designation, photograph and introduction to be supplied (brief §19, stage 3)."
+  },
+  {
+    "slug": "leadership-member-3",
+    "status": "draft",
+    "name": "Leadership member",
+    "role": "Designation to be confirmed",
+    "photo": null,
+    "bio": null,
+    "summary": "A 10–15-word professional introduction will appear here once supplied.",
+    "linkedin": null,
+    "note": "Placeholder. Name, designation, photograph and introduction to be supplied (brief §19, stage 3)."
+  }
+]

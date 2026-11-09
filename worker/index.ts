@@ -6,15 +6,17 @@
  * business mailbox. Nothing is stored.
  *
  * Configuration: variables in the Cloudflare dashboard — see README → "Inquiry form".
- * Email goes through an HTTP email API (worker/mail.ts: Resend, or Brevo).
+ * Email goes through an HTTP email API (worker/mail.ts: Zoho ZeptoMail; Resend or Brevo also work).
  */
 import { validateContact, type ContactInput } from "../lib/contact";
 import { mailProvider, sendMail } from "./mail";
 
 interface Env {
   ASSETS: Fetcher;
-  RESEND_API_KEY?: string; // secret
-  BREVO_API_KEY?: string; // secret, used if RESEND_API_KEY is not set
+  ZEPTOMAIL_API_KEY?: string; // secret: Zoho ZeptoMail Send Mail token
+  ZEPTOMAIL_HOST?: string; // default api.zeptomail.in
+  RESEND_API_KEY?: string; // secret, used if ZEPTOMAIL_API_KEY is not set
+  BREVO_API_KEY?: string; // secret, used if neither is set
   CONTACT_LIMITER?: RateLimit;
   CONTACT_TO?: string;
   CONTACT_FROM?: string;

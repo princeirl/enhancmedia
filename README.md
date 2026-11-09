@@ -127,19 +127,20 @@ The browser checks every field before sending. The Worker then checks again and:
 - requires JSON under 20 KB and rate-limits each IP address to 5 requests a minute;
 - uses a hidden honeypot field and a human verification check (Cloudflare Turnstile);
 - sends the inquiry as an email to the business mailbox, with Reply-To set to the visitor,
-  through an email API (`worker/mail.ts`: Resend, or Brevo if only its key is set). The same file
-  sends the admin panel's sign-in codes.
+  through an email API (`worker/mail.ts`: Zoho ZeptoMail; Resend or Brevo work too, chosen by
+  which key is set). The same file sends the admin panel's sign-in codes.
 
 Nothing is stored. If any configuration is missing, the form returns a polite "temporarily
 unavailable" message rather than failing silently.
 
 To set it up, once the domain and mailbox exist:
 
-1. In Resend, add and verify the domain `enhancmedia.com` (its DNS records go on a `send.`
-   sub-name and do not touch the domain's Zoho mail records), then create an API key with
-   *Sending access* for that domain.
+1. In Zoho ZeptoMail (zeptomail.zoho.in), add and verify the domain `enhancmedia.com` (a DKIM
+   TXT record and a bounce CNAME, added in Cloudflare DNS; the domain's Zoho Mail MX and SPF
+   records stay as they are). Then Mail Agents → your agent → SMTP/API → API → copy the
+   *Send Mail token*.
 2. In the Cloudflare dashboard (Worker → Settings → Variables and Secrets) add the secret
-   `RESEND_API_KEY` and the text variables `CONTACT_TO` (the mailbox that receives inquiries),
+   `ZEPTOMAIL_API_KEY` (the token, with or without its `Zoho-enczapikey` prefix) and the text variables `CONTACT_TO` (the mailbox that receives inquiries),
    `CONTACT_FROM` (an address on the verified domain, e.g. `website@enhancmedia.com`) and
    `ALLOWED_ORIGINS` (`https://www.enhancmedia.com,https://enhancmedia.com`). `wrangler.jsonc`
    has `keep_vars: true`, so deploys never remove them.
@@ -149,8 +150,9 @@ To set it up, once the domain and mailbox exist:
    page, from the vault. It is never committed.
 
 For local testing, `.dev.vars` (git-ignored) holds the provider's public **test** keys. Build
-with `NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA`. With a real `RESEND_API_KEY` in
-`.dev.vars`, local tests send real emails.
+with `NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA`. With a real `ZEPTOMAIL_API_KEY` in
+`.dev.vars`, local tests send real emails. `ZEPTOMAIL_HOST` is only needed for an account outside
+India (`api.zeptomail.com`, `api.zeptomail.eu`).
 
 ## Consultation booking
 
@@ -213,6 +215,6 @@ Still needed from the founder:
 Technical checks:
 
 - [ ] Privacy Policy and Terms reviewed by legal counsel
-- [ ] Resend domain, Turnstile and the dashboard variables configured; `npm run check:launch` passes
+- [ ] ZeptoMail domain, Turnstile and the dashboard variables configured; `npm run check:launch` passes
 - [ ] Performance and accessibility audit on the deployed preview, on real phones and desktops
 - [ ] Founder reviews every page of the preview build and gives final approval

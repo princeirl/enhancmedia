@@ -18,7 +18,7 @@
   // Variables and secrets are set in the Cloudflare dashboard (Worker → Settings → Variables and
   // Secrets), never here. keep_vars stops a deploy from removing them. See README → "Inquiry form".
   //   CONTACT_TO, CONTACT_FROM, ALLOWED_ORIGINS   (text)
-  //   RESEND_API_KEY (or BREVO_API_KEY), TURNSTILE_SECRET   (secrets)
+  //   ZEPTOMAIL_API_KEY, TURNSTILE_SECRET   (secrets; ZEPTOMAIL_HOST optional)
   "keep_vars": true,
   "observability": { "enabled": true }
 }

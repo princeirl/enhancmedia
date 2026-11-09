@@ -21,7 +21,10 @@ import formsData from "@/content/forms.json";
  * (`npm run build:preview`, or `npm run dev`).
  */
 export const isPreview =
-  process.env.SITE_PREVIEW === "1" || process.env.NODE_ENV === "development";
+  process.env.SITE_PREVIEW === "1" ||
+  process.env.NODE_ENV === "development" ||
+  // Cloudflare Workers Builds of any branch but main (the admin's content-draft), whatever build command is set.
+  (!!process.env.WORKERS_CI_BRANCH && process.env.WORKERS_CI_BRANCH !== "main");
 
 export type Status = "draft" | "published";
 

@@ -1,23 +1,20 @@
 import Link from "next/link";
 import { CtaBand, PageHero, SectionHeading } from "@/components/ui";
-import { services, site } from "@/lib/content";
+import { page, services, shared } from "@/lib/content";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta({
-  title: "Services",
-  description:
-    "Digital marketing, branding and identity, personal branding, PR and strategic communications, political communications, web development and growth solutions.",
-  path: "/services",
-});
+const c = page("services");
+
+export const metadata = pageMeta({ ...c.seo, path: "/services" });
 
 export default function Services() {
   return (
     <>
       <PageHero
-        eyebrow="Services"
-        title="Integrated capabilities under one strategic direction."
-        lead="Seven disciplines that can be engaged individually or together, each planned around your objectives and delivered to the same standard."
-        art={1}
+        eyebrow={c.hero.eyebrow}
+        title={c.hero.title}
+        lead={c.hero.lead}
+        art={c.hero.art}
       />
 
       <section className="bg-white py-20 md:py-28">
@@ -44,7 +41,7 @@ export default function Services() {
                     ))}
                   </ul>
                   <span className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-ink md:col-span-1 md:text-right">
-                    <span className="link-draw">View</span>
+                    <span className="link-draw">{c.itemLink}</span>
                   </span>
                 </Link>
               </li>
@@ -55,9 +52,9 @@ export default function Services() {
 
       <section className="border-t border-line bg-paper py-24 md:py-32">
         <div className="container-x">
-          <SectionHeading eyebrow="How we work" title="One method across every discipline." className="max-w-3xl" />
+          <SectionHeading eyebrow={c.method.eyebrow} title={c.method.heading} className="max-w-3xl" />
           <ol className="mt-14 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-5">
-            {site.approach.map((st, i) => (
+            {shared.approach.map((st, i) => (
               <li key={st.title} className="reveal bg-paper p-7">
                 <p className="text-[0.7rem] font-semibold tracking-[0.2em] text-gold-ink">{String(i + 1).padStart(2, "0")}</p>
                 <h3 className="mt-4 font-heading text-xl font-semibold uppercase tracking-[0.04em] text-ink">{st.title}</h3>

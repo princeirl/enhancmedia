@@ -1,0 +1,144 @@
+{
+  "$format": 1,
+  "id": "services",
+  "label": "Services",
+  "group": "Collections",
+  "order": 10,
+  "kind": "list",
+  "file": "content/services.json",
+  "preview": "/services/{slug}",
+  "item": {
+    "label": "Service",
+    "title": "title",
+    "key": "slug",
+    "fields": [
+      {
+        "name": "slug",
+        "label": "Address (slug)",
+        "type": "text",
+        "required": true,
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+        "help": "Lower-case words joined by hyphens. Changing it changes the page address."
+      },
+      {
+        "name": "title",
+        "label": "Name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "short",
+        "label": "Short description",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "name": "headline",
+        "label": "Page headline",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "intro",
+        "label": "Introduction",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "name": "problems",
+        "label": "Problems we address",
+        "type": "list",
+        "of": {
+          "name": "p",
+          "label": "Problem",
+          "type": "textarea"
+        }
+      },
+      {
+        "name": "offerings",
+        "label": "What we offer",
+        "type": "list",
+        "of": {
+          "name": "item",
+          "label": "Offering",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "text",
+              "label": "Text",
+              "type": "textarea"
+            }
+          ]
+        },
+        "itemTitle": "title"
+      },
+      {
+        "name": "process",
+        "label": "Process",
+        "type": "list",
+        "of": {
+          "name": "item",
+          "label": "Step",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "text",
+              "label": "Text",
+              "type": "textarea"
+            }
+          ]
+        },
+        "itemTitle": "title"
+      },
+      {
+        "name": "faqs",
+        "label": "Questions",
+        "type": "list",
+        "of": {
+          "name": "faq",
+          "label": "Question",
+          "type": "object",
+          "fields": [
+            {
+              "name": "q",
+              "label": "Question",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "a",
+              "label": "Answer",
+              "type": "textarea",
+              "required": true
+            }
+          ]
+        },
+        "itemTitle": "q"
+      },
+      {
+        "name": "commitments",
+        "label": "Commitments",
+        "type": "list",
+        "of": {
+          "name": "c",
+          "label": "Commitment",
+          "type": "textarea"
+        },
+        "optional": true,
+        "help": "Optional. Shown as “Our commitments”."
+      }
+    ]
+  }
+}

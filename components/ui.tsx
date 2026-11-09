@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { formatDate, isDraft, isPreview, type Article, type Person, type Project } from "@/lib/content";
+import { formatDate, isDraft, isPreview, shared, type Article, type Person, type Project } from "@/lib/content";
 
 // ---------- Buttons ----------
 export function ButtonLink({
@@ -145,13 +145,8 @@ export function PageHero({
 }
 
 // ---------- Closing call to action ----------
-export function CtaBand({
-  title = "Your next chapter starts with a conversation.",
-  text = "Have an idea, a challenge or an ambition worth pursuing? Let’s discuss how we can bring it to life.",
-}: {
-  title?: string;
-  text?: string;
-}) {
+export function CtaBand({ title = shared.cta.title, text = shared.cta.text }: { title?: string; text?: string }) {
+  const c = shared.cta;
   return (
     <section className="relative overflow-hidden bg-ink text-white">
       <div className="pointer-events-none absolute -bottom-1/2 left-1/2 h-[900px] w-[900px] -translate-x-1/2 text-white/[0.06]" aria-hidden>
@@ -159,15 +154,15 @@ export function CtaBand({
       </div>
       <div className="container-x relative py-24 text-center md:py-36">
         <div className="reveal mx-auto max-w-4xl">
-          <p className="eyebrow text-gold">Let&rsquo;s talk</p>
+          <p className="eyebrow text-gold">{c.eyebrow}</p>
           <h2 className="display mt-6 text-[2.3rem] sm:text-5xl lg:text-[4rem]">{title}</h2>
           <p className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-mist">{text}</p>
           <div className="mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <ButtonLink href="/contact" tone="light">
-              Let&rsquo;s talk
+            <ButtonLink href={c.primary.href} tone="light">
+              {c.primary.label}
             </ButtonLink>
-            <ButtonLink href="/book-a-consultation" tone="light" variant="outline">
-              Book a consultation
+            <ButtonLink href={c.secondary.href} tone="light" variant="outline">
+              {c.secondary.label}
             </ButtonLink>
           </div>
         </div>
@@ -296,7 +291,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
             <h3 className="mt-2 font-heading text-xl font-semibold text-ink">{project.title}</h3>
             <p className="mt-1 text-sm text-muted">{project.client ?? project.industry}</p>
           </div>
-          <span className="mt-6 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-ink link-draw">View case study</span>
+          <span className="mt-6 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-ink link-draw">{shared.labels.viewCaseStudy}</span>
         </div>
       </Link>
     </article>
@@ -362,7 +357,7 @@ export function Breadcrumbs({ items }: { items: { href: string; label: string }[
     <nav aria-label="Breadcrumb" className="border-b border-line bg-paper">
       <ol className="container-x flex flex-wrap items-center gap-2 py-4 text-[0.72rem] font-medium uppercase tracking-[0.16em] text-muted">
         <li>
-          <Link href="/" className="hover:text-ink">Home</Link>
+          <Link href="/" className="hover:text-ink">{shared.labels.home}</Link>
         </li>
         {items.map((it, i) => (
           <li key={it.href} className="flex items-center gap-2">

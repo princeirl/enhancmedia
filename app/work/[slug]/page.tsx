@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Artwork, Breadcrumbs, CtaBand, DraftMark, PlaceholderTag, ProjectCard } from "@/components/ui";
-import { getProject, getService, isDraft, isPreview, work } from "@/lib/content";
+import { fill, getProject, getService, isDraft, isPreview, page, work } from "@/lib/content";
 import { pageMeta } from "@/lib/seo";
 
 type Params = { slug: string };
+
+const c = page("work-detail");
 
 export const dynamicParams = false;
 export function generateStaticParams(): Params[] {
@@ -28,15 +30,15 @@ export default async function CaseStudy({ params }: { params: Promise<Params> })
   const fallbackRelated = related.length ? related : work().filter((x) => x.slug !== p.slug).slice(0, 3);
 
   const sections = [
-    { label: "Client background", body: p.background },
-    { label: "The challenge", body: p.challenge },
-    { label: "Our strategy", body: p.strategy },
-    { label: "What we executed", body: p.execution },
+    { label: c.sections.background, body: p.background },
+    { label: c.sections.challenge, body: p.challenge },
+    { label: c.sections.strategy, body: p.strategy },
+    { label: c.sections.execution, body: p.execution },
   ];
 
   return (
     <>
-      <Breadcrumbs items={[{ href: "/work", label: "Our Work" }, { href: `/work/${p.slug}`, label: p.title }]} />
+      <Breadcrumbs items={[{ href: "/work", label: page("work").hero.eyebrow }, { href: `/work/${p.slug}`, label: p.title }]} />
 
       <section className="bg-paper">
         <div className="container-x pb-14 pt-16 md:pb-20 md:pt-24">
@@ -51,10 +53,10 @@ export default async function CaseStudy({ params }: { params: Promise<Params> })
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">{p.summary}</p>
           <dl className="mt-14 grid gap-px border-y border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ["Client", p.client ?? (isPreview ? "Name pending permission" : "Confidential")],
-              ["Industry", p.industry],
-              ["Services", p.services.map((s) => getService(s)?.title).filter(Boolean).join(", ")],
-              ["Year", p.year ?? "—"],
+              [c.facts.client, p.client ?? (isPreview ? "Name pending permission" : c.facts.confidential)],
+              [c.facts.industry, p.industry],
+              [c.facts.services, p.services.map((s) => getService(s)?.title).filter(Boolean).join(", ")],
+              [c.facts.year, p.year ?? "—"],
             ].map(([k, v]) => (
               <div key={k} className="bg-paper py-5 sm:px-5 sm:first:pl-0">
                 <dt className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-muted">{k}</dt>
@@ -70,7 +72,7 @@ export default async function CaseStudy({ params }: { params: Promise<Params> })
           <div className="relative aspect-[16/8] overflow-hidden">
             {p.cover ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={p.cover} alt={`${p.title}: project overview`} className="h-full w-full object-cover" />
+              <img src={p.cover} alt={fill(c.coverAlt, { title: p.title })} className="h-full w-full object-cover" />
             ) : (
               <Artwork variant={2} className="h-full w-full p-10 text-white/15" />
             )}
@@ -92,7 +94,7 @@ export default async function CaseStudy({ params }: { params: Promise<Params> })
             </div>
           ))}
           <div className="reveal grid gap-6 border-t border-line pt-8 md:grid-cols-12">
-            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-gold-ink md:col-span-4">05 — Deliverables</p>
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-gold-ink md:col-span-4">05 — {c.sections.deliverables}</p>
             <ul className="grid gap-2 md:col-span-7 md:col-start-6 sm:grid-cols-2">
               {p.deliverables.map((d) => (
                 <li key={d} className="flex gap-3 text-lg text-charcoal">
@@ -105,7 +107,7 @@ export default async function CaseStudy({ params }: { params: Promise<Params> })
           {/* Results appear only when they have been verified and supplied. */}
           {p.results ? (
             <div className="reveal grid gap-6 border-t border-ink pt-8 md:grid-cols-12">
-              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-gold-ink md:col-span-4">06 — The outcome</p>
+              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-gold-ink md:col-span-4">06 — {c.sections.results}</p>
               <p className="font-heading text-2xl font-medium leading-snug text-ink md:col-span-7 md:col-start-6">{p.results}</p>
             </div>
           ) : (
@@ -131,8 +133,8 @@ export default async function CaseStudy({ params }: { params: Promise<Params> })
         <section className="border-t border-line bg-paper py-24 md:py-32">
           <div className="container-x">
             <div className="flex items-end justify-between gap-6">
-              <h2 className="display text-3xl text-ink md:text-4xl">Related projects</h2>
-              <Link href="/work" className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ink link-draw">All work</Link>
+              <h2 className="display text-3xl text-ink md:text-4xl">{c.related.heading}</h2>
+              <Link href={c.related.link.href} className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ink link-draw">{c.related.link.label}</Link>
             </div>
             <div className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-3">
               {fallbackRelated.map((r, i) => (

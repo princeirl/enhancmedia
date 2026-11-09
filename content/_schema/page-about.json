@@ -1,0 +1,216 @@
+{
+  "$format": 1,
+  "id": "page-about",
+  "label": "About",
+  "group": "Pages",
+  "order": 20,
+  "kind": "object",
+  "file": "content/pages/about.json",
+  "preview": "/about",
+  "fields": [
+    {
+      "name": "seo",
+      "label": "Search & sharing",
+      "type": "object",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Page title",
+          "type": "text",
+          "nullable": true,
+          "help": "Shown in the browser tab and search results. Empty uses the site name and tagline."
+        },
+        {
+          "name": "description",
+          "label": "Description",
+          "type": "textarea",
+          "required": true,
+          "max": 300,
+          "help": "One or two sentences for search results."
+        }
+      ]
+    },
+    {
+      "name": "hero",
+      "label": "Top of page",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "lead",
+          "label": "Introduction",
+          "type": "textarea"
+        },
+        {
+          "name": "art",
+          "label": "Background pattern",
+          "type": "number",
+          "min": 0,
+          "max": 5,
+          "help": "0–5: which abstract line drawing sits behind the heading."
+        }
+      ]
+    },
+    {
+      "name": "whoWeAre",
+      "label": "Who we are",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "paragraphs",
+          "label": "Paragraphs",
+          "type": "list",
+          "of": {
+            "name": "p",
+            "label": "Paragraph",
+            "type": "textarea"
+          }
+        }
+      ]
+    },
+    {
+      "name": "pillars",
+      "label": "Vision, mission, philosophy",
+      "type": "list",
+      "of": {
+        "name": "pillar",
+        "label": "Pillar",
+        "type": "object",
+        "fields": [
+          {
+            "name": "label",
+            "label": "Label",
+            "type": "text",
+            "required": true
+          },
+          {
+            "name": "text",
+            "label": "Text",
+            "type": "textarea"
+          }
+        ]
+      },
+      "itemTitle": "label"
+    },
+    {
+      "name": "difference",
+      "label": "What makes us different",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "items",
+          "label": "Items",
+          "type": "list",
+          "of": {
+            "name": "item",
+            "label": "Item",
+            "type": "object",
+            "fields": [
+              {
+                "name": "title",
+                "label": "Title",
+                "type": "text",
+                "required": true
+              },
+              {
+                "name": "text",
+                "label": "Text",
+                "type": "textarea"
+              }
+            ]
+          },
+          "itemTitle": "title"
+        }
+      ]
+    },
+    {
+      "name": "expertise",
+      "label": "Areas of expertise",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "link",
+          "label": "Link",
+          "type": "link"
+        },
+        {
+          "name": "itemLink",
+          "label": "Link on each service",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "founder",
+      "label": "Founder",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "person",
+          "label": "Person",
+          "type": "reference",
+          "collection": "team"
+        },
+        {
+          "name": "fallbackBio",
+          "label": "Text when the person has no biography",
+          "type": "textarea",
+          "help": "Placeholders: {site} {name} {role}"
+        },
+        {
+          "name": "link",
+          "label": "Link",
+          "type": "link"
+        }
+      ]
+    }
+  ]
+}

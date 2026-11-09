@@ -4,9 +4,11 @@ import Link from "next/link";
 import Script from "next/script";
 import { useRef, useState } from "react";
 import { contactMethods, validateContact, type ContactErrors } from "@/lib/contact";
+import type { FormsText } from "@/lib/content";
 
 type Props = {
   intent: "inquiry" | "consultation";
+  text: FormsText;
   endpoint: string;
   turnstileSiteKey: string | null;
   services: { slug: string; title: string }[];
@@ -19,7 +21,7 @@ type State =
   | { kind: "sent" }
   | { kind: "error"; message: string };
 
-export function ContactForm({ intent, endpoint, turnstileSiteKey, services, defaultService }: Props) {
+export function ContactForm({ intent, text: t, endpoint, turnstileSiteKey, services, defaultService }: Props) {
   const formRef = useRef<HTMLFormElement>(null);
   const [errors, setErrors] = useState<ContactErrors>({});
   const [state, setState] = useState<State>({ kind: "idle" });
@@ -67,14 +69,12 @@ export function ContactForm({ intent, endpoint, turnstileSiteKey, services, defa
       }
       setState({
         kind: "error",
-        message:
-          body.message ??
-          "We could not send your message just now. Please try again in a few minutes.",
+        message: body.message ?? t.sendError,
       });
     } catch {
       setState({
         kind: "error",
-        message: "We could not reach our server. Please check your connection and try again.",
+        message: t.networkError,
       });
     } finally {
       // A Turnstile token is single-use.
@@ -85,19 +85,19 @@ export function ContactForm({ intent, endpoint, turnstileSiteKey, services, defa
   if (state.kind === "sent") {
     return (
       <div role="status" className="border border-line bg-white p-8 md:p-12">
-        <p className="eyebrow text-gold-ink">Thank you</p>
+        <p className="eyebrow text-gold-ink">{t.success.eyebrow}</p>
         <h2 className="display mt-5 text-3xl text-ink md:text-4xl">
-          {intent === "consultation" ? "Your consultation request has been received." : "Your message has been received."}
+          {intent === "consultation" ? t.success.headingConsultation : t.success.headingInquiry}
         </h2>
         <p className="mt-5 max-w-lg leading-relaxed text-muted">
-          A member of our team will review it and respond using your preferred contact method.
+          {t.success.text}
         </p>
         <button
           type="button"
           onClick={() => setState({ kind: "idle" })}
           className="mt-8 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-ink link-draw"
         >
-          Send another message
+          {t.success.again}
         </button>
       </div>
     );
@@ -112,27 +112,26 @@ export function ContactForm({ intent, endpoint, turnstileSiteKey, services, defa
       )}
 
       <p id="form-note" className="mb-8 text-sm text-muted">
-        Fields marked <span aria-hidden className="text-gold-ink">*</span>
-        <span className="sr-only">with an asterisk</span> are required.
+        {t.requiredNote}
       </p>
 
       <div className="grid gap-x-8 gap-y-7 md:grid-cols-2">
-        <Field label="Full name" name="name" required error={errors.name} autoComplete="name" />
-        <Field label="Business or organization" name="organization" error={errors.organization} autoComplete="organization" />
-        <Field label="Email address" name="email" type="email" required error={errors.email} autoComplete="email" inputMode="email" />
+        <Field label={t.fields.name} name="name" required error={errors.name} autoComplete="name" />
+        <Field label={t.fields.organization} name="organization" error={errors.organization} autoComplete="organization" />
+        <Field label={t.fields.email} name="email" type="email" required error={errors.email} autoComplete="email" inputMode="email" />
         <Field
-          label="Phone number"
+          label={t.fields.phone}
           name="phone"
           type="tel"
           required={method !== "Email"}
           error={errors.phone}
           autoComplete="tel"
           inputMode="tel"
-          hint="Include your country code, e.g. +91."
+          hint={t.fields.phoneHint}
         />
-        <Field label="Country" name="country" required error={errors.country} autoComplete="country-name" />
+        <Field label={t.fields.country} name="country" required error={errors.country} autoComplete="country-name" />
         <div>
-          <Label htmlFor="service" required>Service required</Label>
+          <Label htmlFor="service" required>{t.fields.service}</Label>
           <select
             id="service"
             name="service"
@@ -141,18 +140,18 @@ export function ContactForm({ intent, endpoint, turnstileSiteKey, services, defa
             aria-describedby={errors.service ? "service-error" : undefined}
             className={inputCls(!!errors.service)}
           >
-            <option value="" disabled>Select a service</option>
+            <option value="" disabled>{t.fields.servicePlaceholder}</option>
             {services.map((s) => (
               <option key={s.slug} value={s.title}>{s.title}</option>
             ))}
-            <option value="Not sure yet">Not sure yet — I would like advice</option>
+            <option value="Not sure yet">{t.fields.serviceNotSure}</option>
           </select>
           <ErrorText id="service-error" error={errors.service} />
         </div>
 
         <div className="md:col-span-2">
           <Label htmlFor="message" required>
-            {intent === "consultation" ? "What would you like to discuss?" : "Project description"}
+            {intent === "consultation" ? t.fields.messageConsultation : t.fields.messageInquiry}
           </Label>
           <textarea
             id="message"
@@ -164,19 +163,19 @@ export function ContactForm({ intent, endpoint, turnstileSiteKey, services, defa
           />
           {!errors.message && (
             <p id="message-hint" className="mt-2 text-xs text-muted">
-              Your objectives, timing and anything we should know.
+              {t.fields.messageHint}
             </p>
           )}
           <ErrorText id="message-error" error={errors.message} />
         </div>
 
-        <Field label="Approximate budget" name="budget" error={errors.budget} hint="Optional, e.g. ₹5 lakh or US$10,000." />
+        <Field label={t.fields.budget} name="budget" error={errors.budget} hint={t.fields.budgetHint} />
         {intent === "consultation" ? (
           <Field
-            label="Preferred dates and times"
+            label={t.fields.preferredTimes}
             name="preferredTimes"
             error={errors.preferredTimes}
-            hint="Optional. Please include your time zone."
+            hint={t.fields.preferredTimesHint}
           />
         ) : (
           <input type="hidden" name="preferredTimes" value="" />
@@ -184,7 +183,7 @@ export function ContactForm({ intent, endpoint, turnstileSiteKey, services, defa
 
         <fieldset className="md:col-span-2" aria-describedby={errors.contactMethod ? "contactMethod-error" : undefined}>
           <legend className="mb-3 text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-ink">
-            Preferred contact method <span aria-hidden className="text-gold-ink">*</span>
+            {t.fields.contactMethod} <span aria-hidden className="text-gold-ink">*</span>
           </legend>
           <div className="flex flex-wrap gap-3">
             {contactMethods.map((m) => (
@@ -225,8 +224,8 @@ export function ContactForm({ intent, endpoint, turnstileSiteKey, services, defa
               className="mt-1 h-4 w-4 shrink-0 accent-[#111111]"
             />
             <span>
-              I agree that Enhanc Media may use these details to respond to my {intent === "consultation" ? "consultation request" : "inquiry"}, as
-              described in the <Link href="/privacy-policy" className="underline decoration-gold underline-offset-4">Privacy Policy</Link>.
+              {intent === "consultation" ? t.consentConsultation : t.consentInquiry}{" "}
+              <Link href={t.consentLink.href} className="underline decoration-gold underline-offset-4">{t.consentLink.label}</Link>.
               <span aria-hidden className="text-gold-ink"> *</span>
             </span>
           </label>
@@ -242,7 +241,7 @@ export function ContactForm({ intent, endpoint, turnstileSiteKey, services, defa
 
       {Object.keys(errors).length > 0 && (
         <p role="alert" className="mt-8 border-l-2 border-[#9b2c2c] bg-[#fbf1f1] px-4 py-3 text-sm text-[#7a1f1f]">
-          Please review the highlighted fields.
+          {t.reviewFields}
         </p>
       )}
       {state.kind === "error" && (
@@ -257,10 +256,10 @@ export function ContactForm({ intent, endpoint, turnstileSiteKey, services, defa
           disabled={sending}
           className="group inline-flex items-center justify-center gap-4 bg-ink px-8 py-4 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-charcoal disabled:cursor-wait disabled:opacity-70"
         >
-          {sending ? "Sending…" : intent === "consultation" ? "Request consultation" : "Send inquiry"}
+          {sending ? t.sending : intent === "consultation" ? t.submitConsultation : t.submitInquiry}
           <span className="h-px w-6 bg-gold transition-all duration-500 group-hover:w-10" aria-hidden />
         </button>
-        <p className="text-xs text-muted">Protected against spam. We never share your details.</p>
+        <p className="text-xs text-muted">{t.spamNote}</p>
       </div>
     </form>
   );

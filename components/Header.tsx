@@ -6,8 +6,16 @@ import { useEffect, useRef, useState } from "react";
 
 type NavChild = { href: string; label: string };
 type NavItem = { href: string; label: string; children?: NavChild[]; allLabel?: string };
+type HeaderText = {
+  cta: NavChild;
+  mobileButtons: NavChild[];
+  openMenu: string;
+  closeMenu: string;
+  skip: string;
+  homeLabel: string;
+};
 
-export function Header({ nav, logo }: { nav: NavItem[]; logo: React.ReactNode }) {
+export function Header({ nav, logo, text }: { nav: NavItem[]; logo: React.ReactNode; text: HeaderText }) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -71,10 +79,10 @@ export function Header({ nav, logo }: { nav: NavItem[]; logo: React.ReactNode })
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-[60] focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
       >
-        Skip to content
+        {text.skip}
       </a>
       <div className="container-x flex h-[72px] items-center justify-between gap-6 md:h-[84px]">
-        <Link href="/" className="shrink-0" aria-label="Enhanc Media — home">
+        <Link href="/" className="shrink-0" aria-label={text.homeLabel}>
           {logo}
         </Link>
 
@@ -166,10 +174,10 @@ export function Header({ nav, logo }: { nav: NavItem[]; logo: React.ReactNode })
 
         <div className="flex items-center gap-3">
           <Link
-            href="/contact"
+            href={text.cta.href}
             className="group hidden items-center gap-3 bg-ink px-5 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-charcoal sm:inline-flex"
           >
-            Let&rsquo;s talk
+            {text.cta.label}
             <span className="h-px w-5 bg-gold transition-all duration-500 group-hover:w-8" aria-hidden />
           </Link>
           <button
@@ -177,7 +185,7 @@ export function Header({ nav, logo }: { nav: NavItem[]; logo: React.ReactNode })
             className="inline-flex h-11 w-11 items-center justify-center lg:hidden"
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-label={mobileOpen ? text.closeMenu : text.openMenu}
             onClick={() => {
               if (headerRef.current) setPanelTop(Math.max(0, headerRef.current.getBoundingClientRect().bottom));
               setMobileOpen((o) => !o);
@@ -243,15 +251,17 @@ export function Header({ nav, logo }: { nav: NavItem[]; logo: React.ReactNode })
             ))}
           </ul>
           <div className="mt-8 grid gap-3">
-            <Link href="/contact" className="bg-ink px-6 py-4 text-center text-[0.75rem] font-semibold uppercase tracking-[0.22em] text-white">
-              Start a project
-            </Link>
-            <Link
-              href="/book-a-consultation"
-              className="border border-ink px-6 py-4 text-center text-[0.75rem] font-semibold uppercase tracking-[0.22em] text-ink"
-            >
-              Book a consultation
-            </Link>
+            {text.mobileButtons.map((b, i) => (
+              <Link
+                key={b.href + i}
+                href={b.href}
+                className={`px-6 py-4 text-center text-[0.75rem] font-semibold uppercase tracking-[0.22em] ${
+                  i === 0 ? "bg-ink text-white" : "border border-ink text-ink"
+                }`}
+              >
+                {b.label}
+              </Link>
+            ))}
           </div>
         </nav>
       </div>

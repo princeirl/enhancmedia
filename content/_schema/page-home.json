@@ -1,0 +1,356 @@
+{
+  "$format": 1,
+  "id": "page-home",
+  "label": "Home",
+  "group": "Pages",
+  "order": 10,
+  "kind": "object",
+  "file": "content/pages/home.json",
+  "preview": "/",
+  "fields": [
+    {
+      "name": "seo",
+      "label": "Search & sharing",
+      "type": "object",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Page title",
+          "type": "text",
+          "nullable": true,
+          "help": "Shown in the browser tab and search results. Empty uses the site name and tagline."
+        },
+        {
+          "name": "description",
+          "label": "Description",
+          "type": "textarea",
+          "required": true,
+          "max": 300,
+          "help": "One or two sentences for search results."
+        }
+      ]
+    },
+    {
+      "name": "hero",
+      "label": "Hero",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "headline",
+          "label": "Headline lines",
+          "type": "list",
+          "of": {
+            "name": "line",
+            "label": "Line",
+            "type": "text"
+          },
+          "help": "The last line is shown in gold."
+        },
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "textarea"
+        },
+        {
+          "name": "primary",
+          "label": "First button",
+          "type": "link"
+        },
+        {
+          "name": "secondary",
+          "label": "Second button",
+          "type": "link"
+        },
+        {
+          "name": "pillars",
+          "label": "Words along the bottom",
+          "type": "list",
+          "of": {
+            "name": "word",
+            "label": "Word",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "name": "intro",
+      "label": "Who we are",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "lead",
+          "label": "Lead",
+          "type": "textarea"
+        },
+        {
+          "name": "body",
+          "label": "Body",
+          "type": "textarea"
+        },
+        {
+          "name": "points",
+          "label": "Points",
+          "type": "list",
+          "of": {
+            "name": "item",
+            "label": "Point",
+            "type": "object",
+            "fields": [
+              {
+                "name": "title",
+                "label": "Title",
+                "type": "text",
+                "required": true
+              },
+              {
+                "name": "text",
+                "label": "Text",
+                "type": "textarea"
+              }
+            ]
+          },
+          "itemTitle": "title"
+        },
+        {
+          "name": "link",
+          "label": "Link",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "name": "services",
+      "label": "What we do",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "textarea"
+        },
+        {
+          "name": "itemLink",
+          "label": "Link on each service",
+          "type": "text"
+        }
+      ],
+      "help": "The services themselves are edited under Services."
+    },
+    {
+      "name": "audiences",
+      "label": "Who we work with",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "textarea"
+        },
+        {
+          "name": "itemLink",
+          "label": "Link on each industry",
+          "type": "text"
+        },
+        {
+          "name": "other",
+          "label": "Last tile",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small label",
+              "type": "text"
+            },
+            {
+              "name": "text",
+              "label": "Text",
+              "type": "textarea"
+            },
+            {
+              "name": "link",
+              "label": "Link",
+              "type": "link"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "work",
+      "label": "Selected work",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "link",
+          "label": "Link",
+          "type": "link"
+        },
+        {
+          "name": "count",
+          "label": "Projects shown",
+          "type": "number",
+          "min": 0,
+          "max": 12
+        }
+      ],
+      "help": "Shown only when a project is published."
+    },
+    {
+      "name": "approach",
+      "label": "Our approach",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "lead",
+          "label": "Lead",
+          "type": "textarea"
+        },
+        {
+          "name": "stepLabel",
+          "label": "Stage label",
+          "type": "text"
+        }
+      ],
+      "help": "The stages are under Shared sections."
+    },
+    {
+      "name": "leadership",
+      "label": "Leadership",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "link",
+          "label": "Link",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "name": "why",
+      "label": "Why Enhanc Media",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "textarea"
+        }
+      ],
+      "help": "The principles are under Shared sections."
+    },
+    {
+      "name": "insights",
+      "label": "Insights",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "link",
+          "label": "Link",
+          "type": "link"
+        },
+        {
+          "name": "count",
+          "label": "Articles shown",
+          "type": "number",
+          "min": 0,
+          "max": 12
+        }
+      ],
+      "help": "Shown only when an article is published."
+    }
+  ]
+}

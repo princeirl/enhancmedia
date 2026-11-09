@@ -1,0 +1,25 @@
+{
+  "facts": {
+    "client": "Client",
+    "industry": "Industry",
+    "services": "Services",
+    "year": "Year",
+    "confidential": "Confidential"
+  },
+  "sections": {
+    "background": "Client background",
+    "challenge": "The challenge",
+    "strategy": "Our strategy",
+    "execution": "What we executed",
+    "deliverables": "Deliverables",
+    "results": "The outcome"
+  },
+  "coverAlt": "{title}: project overview",
+  "related": {
+    "heading": "Related projects",
+    "link": {
+      "label": "All work",
+      "href": "/work"
+    }
+  }
+}

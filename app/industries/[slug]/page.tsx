@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs, ButtonLink, CtaBand, PageHero, ProjectCard, SectionHeading } from "@/components/ui";
-import { getIndustry, getService, industries, work } from "@/lib/content";
+import { fill, getIndustry, getService, industries, page, work } from "@/lib/content";
 import { pageMeta } from "@/lib/seo";
 
 type Params = { slug: string };
+
+const c = page("industry-detail");
 
 export const dynamicParams = false;
 export function generateStaticParams(): Params[] {
@@ -28,15 +30,15 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
 
   return (
     <>
-      <Breadcrumbs items={[{ href: "/industries", label: "Industries" }, { href: `/industries/${ind.slug}`, label: ind.title }]} />
-      <PageHero eyebrow={`For ${ind.title}`} title={ind.headline} lead={ind.short} art={index + 2}>
-        <ButtonLink href="/contact">Start a conversation</ButtonLink>
+      <Breadcrumbs items={[{ href: "/industries", label: page("industries").hero.eyebrow }, { href: `/industries/${ind.slug}`, label: ind.title }]} />
+      <PageHero eyebrow={fill(c.eyebrow, { title: ind.title })} title={ind.headline} lead={ind.short} art={index + 2}>
+        <ButtonLink href={c.button.href}>{c.button.label}</ButtonLink>
       </PageHero>
 
       <section className="bg-white py-24 md:py-32">
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <SectionHeading eyebrow="Understanding" title="What we understand about your world." />
+            <SectionHeading eyebrow={c.understanding.eyebrow} title={c.understanding.heading} />
           </div>
           <p className="reveal font-heading text-xl font-medium leading-relaxed text-ink md:text-2xl lg:col-span-6 lg:col-start-7">
             {ind.understanding}
@@ -47,7 +49,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
       <section className="border-t border-line bg-paper py-24 md:py-32">
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <SectionHeading eyebrow="Challenges" title="The challenges we hear most often." />
+            <SectionHeading eyebrow={c.challenges.eyebrow} title={c.challenges.heading} />
           </div>
           <ul className="lg:col-span-6 lg:col-start-7">
             {ind.challenges.map((c, i) => (
@@ -62,7 +64,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
 
       <section className="bg-ink py-24 text-white md:py-32">
         <div className="container-x">
-          <SectionHeading tone="light" eyebrow="How we help" title="Possible solutions." className="max-w-3xl" />
+          <SectionHeading tone="light" eyebrow={c.help.eyebrow} title={c.help.heading} className="max-w-3xl" />
           <ul className="mt-14 grid gap-px bg-line-dark md:grid-cols-3">
             {ind.solutions.map((s) => (
               <li key={s.title} className="reveal bg-ink p-8 md:p-10">
@@ -73,7 +75,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
             ))}
           </ul>
           <div className="mt-20">
-            <p className="eyebrow text-gold">Applicable services</p>
+            <p className="eyebrow text-gold">{c.help.servicesLabel}</p>
             <ul className="mt-6 grid border-t border-line-dark sm:grid-cols-2">
               {applicable.map((s) => (
                 <li key={s.slug} className="border-b border-line-dark sm:odd:border-r">
@@ -91,12 +93,12 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
       <section className="bg-white py-24 md:py-32">
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <SectionHeading eyebrow="Our approach" title="How we work with you." />
+            <SectionHeading eyebrow={c.approach.eyebrow} title={c.approach.heading} />
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
             <p className="reveal text-lg leading-relaxed text-muted">{ind.approach}</p>
             <div className="reveal mt-10">
-              <ButtonLink href="/book-a-consultation" variant="outline">Book a consultation</ButtonLink>
+              <ButtonLink href={c.approach.button.href} variant="outline">{c.approach.button.label}</ButtonLink>
             </div>
           </div>
         </div>
@@ -105,7 +107,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
       {projects.length > 0 && (
         <section className="border-t border-line bg-paper py-24 md:py-32">
           <div className="container-x">
-            <SectionHeading eyebrow="Relevant work" title="Related case studies." />
+            <SectionHeading eyebrow={c.work.eyebrow} title={c.work.heading} />
             <div className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-2">
               {projects.map((p, i) => (
                 <ProjectCard key={p.slug} project={p} index={i} />
@@ -117,7 +119,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
 
       <section className="border-t border-line bg-paper py-14">
         <div className="container-x">
-          <p className="eyebrow text-gold-ink">Other industries</p>
+          <p className="eyebrow text-gold-ink">{c.othersLabel}</p>
           <ul className="mt-6 flex flex-wrap gap-3">
             {others.map((o) => (
               <li key={o.slug}>

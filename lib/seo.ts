@@ -2,13 +2,16 @@ import type { Metadata } from "next";
 import { isPreview, site, siteUrl } from "./content";
 
 /** Per-page metadata: unique title, description, canonical URL and social sharing tags. */
+/** The sharing image: one set in the admin (site.shareImage), or the generated default. */
+const shareImage = site.shareImage ?? "/og.png";
+
 export function pageMeta({
   title,
   description,
   path,
   type = "website",
 }: {
-  title?: string;
+  title?: string | null;
   description: string;
   path: string;
   type?: "website" | "article";
@@ -25,9 +28,9 @@ export function pageMeta({
       siteName: site.name,
       type,
       locale: "en_IN",
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: site.name }],
+      images: [{ url: shareImage, width: 1200, height: 630, alt: site.name }],
     },
-    twitter: { card: "summary_large_image", title: fullTitle, description, images: ["/og.png"] },
+    twitter: { card: "summary_large_image", title: fullTitle, description, images: [shareImage] },
     robots: isPreview ? { index: false, follow: false } : undefined,
   };
 }

@@ -32,11 +32,11 @@ export function Logo({
         <path d="M2 7 Q60 -4 118 7" fill="none" stroke="currentColor" strokeWidth="1.1" />
       </svg>
       <span className="font-heading text-[15px] font-medium tracking-[0.42em] md:text-[17px]" style={{ marginRight: "-0.42em" }}>
-        ENHANC MEDIA
+        {site.name.toUpperCase()}
       </span>
       {tagline && (
         <span className="mt-2 text-[7.5px] font-medium tracking-[0.38em] opacity-75" style={{ marginRight: "-0.38em" }}>
-          STRATEGY | CREATIVE | GROWTH
+          {site.tagline.toUpperCase()}
         </span>
       )}
     </span>

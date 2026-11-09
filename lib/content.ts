@@ -8,6 +8,9 @@ import servicesData from "@/content/services.json";
 import industriesData from "@/content/industries.json";
 import teamData from "@/content/team.json";
 import workData from "@/content/work.json";
+import sharedData from "@/content/shared.json";
+import navigationData from "@/content/navigation.json";
+import formsData from "@/content/forms.json";
 
 /**
  * Content lives in `content/` as JSON and Markdown, so it can be edited without touching
@@ -29,7 +32,8 @@ export function visible<T extends Published>(items: T[]): T[] {
 export const isDraft = (i: Published) => i.status !== "published";
 
 // ---------- Site ----------
-export type Site = Omit<typeof siteData, "legalName" | "brand" | "contact" | "social" | "forms" | "booking"> & {
+export type Site = Omit<typeof siteData, "legalName" | "brand" | "contact" | "social" | "forms" | "booking" | "shareImage"> & {
+  shareImage: string | null;
   legalName: string | null;
   brand: { logoOnLight: string | null; logoOnDark: string | null };
   contact: {
@@ -47,8 +51,76 @@ export const site = siteData as unknown as Site;
 // The spam-protection site key (public) may also be supplied at build time.
 if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY) site.forms.turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
-/** Canonical origin. Set SITE_URL at build time once the domain is confirmed. */
-export const siteUrl = (process.env.SITE_URL || "http://localhost:4173").replace(/\/$/, "");
+/** Canonical origin: `url` in content/site.json, or SITE_URL at build time to override it. */
+export const siteUrl = (process.env.SITE_URL || site.url).replace(/\/$/, "");
+
+// ---------- Shared text, navigation, forms, pages ----------
+export type Link = { label: string; href: string };
+export const shared = sharedData;
+export const navigation = navigationData as Omit<typeof navigationData, "header"> & {
+  header: Omit<typeof navigationData.header, "items"> & {
+    items: { label: string; href: string; auto: "services" | "industries" | null; allLabel: string | null; children: Link[] }[];
+  };
+};
+export const forms = formsData;
+export type FormsText = typeof formsData;
+
+import homePage from "@/content/pages/home.json";
+import aboutPage from "@/content/pages/about.json";
+import servicesPage from "@/content/pages/services.json";
+import serviceDetailPage from "@/content/pages/service-detail.json";
+import industriesPage from "@/content/pages/industries.json";
+import industryDetailPage from "@/content/pages/industry-detail.json";
+import workPage from "@/content/pages/work.json";
+import workDetailPage from "@/content/pages/work-detail.json";
+import insightsPage from "@/content/pages/insights.json";
+import articlePage from "@/content/pages/article.json";
+import leadershipPage from "@/content/pages/leadership.json";
+import contactPage from "@/content/pages/contact.json";
+import bookPage from "@/content/pages/book-a-consultation.json";
+import notFoundPage from "@/content/pages/not-found.json";
+
+/** Every page's own text, one file per page in `content/pages/`. */
+const pages = {
+  home: homePage,
+  about: aboutPage,
+  services: servicesPage,
+  "service-detail": serviceDetailPage,
+  industries: industriesPage,
+  "industry-detail": industryDetailPage,
+  work: workPage,
+  "work-detail": workDetailPage,
+  insights: insightsPage,
+  article: articlePage,
+  leadership: leadershipPage,
+  contact: contactPage,
+  "book-a-consultation": bookPage,
+  "not-found": notFoundPage,
+};
+export const page = <K extends keyof typeof pages>(name: K): (typeof pages)[K] => pages[name];
+
+/** Fills `{name}` placeholders in editable text, e.g. "Service {number} · {title}". */
+export function fill(text: string, vars: Record<string, string | number>) {
+  return text.replace(/\{(\w+)\}/g, (m, k: string) => (k in vars ? String(vars[k]) : m));
+}
+
+// ---------- Legal pages ----------
+export type LegalDoc = { title: string; description: string; updated: string; sections: { heading: string; html: string }[] };
+export function legal(name: "privacy-policy" | "terms"): LegalDoc {
+  const { data, content } = matter(fs.readFileSync(path.join(process.cwd(), "content", "legal", `${name}.md`), "utf8"));
+  const s = siteData as unknown as Site;
+  const entity = s.legalName ?? s.name;
+  const contact = s.contact.email ? `[${s.contact.email}](mailto:${s.contact.email})` : "[our contact form](/contact)";
+  const body = content.replaceAll("{entity}", entity).replaceAll("{contact}", contact);
+  const sections = body
+    .split(/^## /m)
+    .slice(1)
+    .map((chunk) => {
+      const nl = chunk.indexOf("\n");
+      return { heading: chunk.slice(0, nl).trim(), html: marked.parse(chunk.slice(nl + 1), { async: false }) as string };
+    });
+  return { title: String(data.title), description: String(data.description), updated: String(data.updated), sections };
+}
 
 // ---------- Services ----------
 export type Service = {
@@ -115,14 +187,7 @@ export type Project = {
   results: string | null;
   gallery: { src: string; alt: string }[];
 };
-export const workCategories = [
-  "Branding",
-  "Digital Marketing",
-  "Web Development",
-  "Personal Branding",
-  "PR & Communications",
-  "Political Marketing",
-] as const;
+export const workCategories = (): string[] => page("work").categories;
 export const work = () => visible(workData as Project[]);
 export const getProject = (slug: string) => work().find((p) => p.slug === slug);
 export const workForService = (slug: string) => work().filter((p) => p.services.includes(slug));

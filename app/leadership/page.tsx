@@ -1,22 +1,20 @@
 import { CtaBand, DraftMark, PageHero, Portrait } from "@/components/ui";
-import { team } from "@/lib/content";
+import { page, shared, team } from "@/lib/content";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta({
-  title: "Leadership",
-  description: "Meet the leadership of Enhanc Media, led by Founder & CEO Prince Yadav.",
-  path: "/leadership",
-});
+const c = page("leadership");
+
+export const metadata = pageMeta({ ...c.seo, path: "/leadership" });
 
 export default function Leadership() {
   const people = team();
   return (
     <>
       <PageHero
-        eyebrow="Leadership"
-        title="The people behind Enhanc Media."
-        lead="The leadership responsible for the agency’s direction, its standards and its client relationships."
-        art={4}
+        eyebrow={c.hero.eyebrow}
+        title={c.hero.title}
+        lead={c.hero.lead}
+        art={c.hero.art}
       />
       <section className="bg-white py-24 md:py-32">
         <div className="container-x">
@@ -40,7 +38,7 @@ export default function Leadership() {
                       rel="noopener noreferrer"
                       className="mt-5 inline-block text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ink link-draw"
                     >
-                      Professional profile <span className="sr-only">for {p.name} (opens in a new tab)</span>
+                      {c.profileLink} <span className="sr-only">— {p.name} {shared.labels.opensInNewTab}</span>
                     </a>
                   )}
                 </div>

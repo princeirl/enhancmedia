@@ -1,0 +1,42 @@
+{
+  "requiredNote": "Fields marked * are required.",
+  "fields": {
+    "name": "Full name",
+    "organization": "Business or organization",
+    "email": "Email address",
+    "phone": "Phone number",
+    "phoneHint": "Include your country code, e.g. +91.",
+    "country": "Country",
+    "service": "Service required",
+    "servicePlaceholder": "Select a service",
+    "serviceNotSure": "Not sure yet — I would like advice",
+    "messageInquiry": "Project description",
+    "messageConsultation": "What would you like to discuss?",
+    "messageHint": "Your objectives, timing and anything we should know.",
+    "budget": "Approximate budget",
+    "budgetHint": "Optional, e.g. ₹5 lakh or US$10,000.",
+    "preferredTimes": "Preferred dates and times",
+    "preferredTimesHint": "Optional. Please include your time zone.",
+    "contactMethod": "Preferred contact method"
+  },
+  "consentInquiry": "I agree that Enhanc Media may use these details to respond to my inquiry, as described in the",
+  "consentConsultation": "I agree that Enhanc Media may use these details to respond to my consultation request, as described in the",
+  "consentLink": {
+    "label": "Privacy Policy",
+    "href": "/privacy-policy"
+  },
+  "reviewFields": "Please review the highlighted fields.",
+  "sendError": "We could not send your message just now. Please try again in a few minutes.",
+  "networkError": "We could not reach our server. Please check your connection and try again.",
+  "submitInquiry": "Send inquiry",
+  "submitConsultation": "Request consultation",
+  "sending": "Sending…",
+  "spamNote": "Protected against spam. We never share your details.",
+  "success": {
+    "eyebrow": "Thank you",
+    "headingInquiry": "Your message has been received.",
+    "headingConsultation": "Your consultation request has been received.",
+    "text": "A member of our team will review it and respond using your preferred contact method.",
+    "again": "Send another message"
+  }
+}

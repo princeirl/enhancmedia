@@ -1,0 +1,140 @@
+{
+  "header": {
+    "items": [
+      {
+        "label": "Home",
+        "href": "/",
+        "auto": null,
+        "allLabel": null,
+        "children": []
+      },
+      {
+        "label": "About",
+        "href": "/about",
+        "auto": null,
+        "allLabel": null,
+        "children": [
+          {
+            "label": "About Enhanc Media",
+            "href": "/about"
+          },
+          {
+            "label": "Leadership",
+            "href": "/leadership"
+          }
+        ]
+      },
+      {
+        "label": "Services",
+        "href": "/services",
+        "auto": "services",
+        "allLabel": "All services",
+        "children": []
+      },
+      {
+        "label": "Industries",
+        "href": "/industries",
+        "auto": "industries",
+        "allLabel": "All industries",
+        "children": []
+      },
+      {
+        "label": "Our Work",
+        "href": "/work",
+        "auto": null,
+        "allLabel": null,
+        "children": []
+      },
+      {
+        "label": "Insights",
+        "href": "/insights",
+        "auto": null,
+        "allLabel": null,
+        "children": []
+      },
+      {
+        "label": "Contact",
+        "href": "/contact",
+        "auto": null,
+        "allLabel": null,
+        "children": []
+      }
+    ],
+    "cta": {
+      "label": "Let’s talk",
+      "href": "/contact"
+    },
+    "mobileButtons": [
+      {
+        "label": "Start a project",
+        "href": "/contact"
+      },
+      {
+        "label": "Book a consultation",
+        "href": "/book-a-consultation"
+      }
+    ],
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "exploreTitle": "Explore",
+    "explore": [
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Leadership",
+        "href": "/leadership"
+      },
+      {
+        "label": "Services",
+        "href": "/services"
+      },
+      {
+        "label": "Industries",
+        "href": "/industries"
+      },
+      {
+        "label": "Our Work",
+        "href": "/work"
+      },
+      {
+        "label": "Insights",
+        "href": "/insights"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      },
+      {
+        "label": "Book a consultation",
+        "href": "/book-a-consultation"
+      }
+    ],
+    "servicesTitle": "Services",
+    "industriesTitle": "Industries",
+    "contactTitle": "Contact",
+    "whatsappLabel": "WhatsApp",
+    "noContact": {
+      "text": "Tell us about your project through our",
+      "link": {
+        "label": "inquiry form",
+        "href": "/contact"
+      }
+    },
+    "followTitle": "Follow",
+    "rights": "All rights reserved.",
+    "legal": [
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy-policy"
+      },
+      {
+        "label": "Terms & Conditions",
+        "href": "/terms"
+      }
+    ]
+  }
+}

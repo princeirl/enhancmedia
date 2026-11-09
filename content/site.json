@@ -1,15 +1,14 @@
 {
   "name": "Enhanc Media",
+  "url": "https://www.enhancmedia.com",
   "legalName": null,
   "tagline": "Strategy | Creative | Growth",
   "description": "Enhanc Media is a strategic marketing, branding and communications agency working with businesses, individuals and organizations across India and international markets.",
   "founder": "Prince Yadav",
-
   "brand": {
     "logoOnLight": null,
     "logoOnDark": null
   },
-
   "contact": {
     "email": null,
     "phone": null,
@@ -17,58 +16,14 @@
     "address": null,
     "hours": null
   },
-
   "social": [],
-
   "forms": {
     "endpoint": "/api/contact",
     "turnstileSiteKey": null
   },
-
   "booking": {
     "provider": null,
     "url": null
   },
-
-  "home": {
-    "hero": {
-      "eyebrow": "Strategy | Creative | Growth",
-      "headline": ["We build brands.", "We shape perceptions.", "We create influence."],
-      "text": "Strategic thinking, creative execution and powerful communication for businesses, individuals and organizations looking to make a meaningful impact."
-    },
-    "intro": {
-      "heading": "More than marketing. A strategic approach to growth.",
-      "lead": "Enhanc Media is a strategic marketing, branding and communications agency. We work with businesses, individuals and organizations that want to be understood clearly, remembered for the right reasons and positioned to grow.",
-      "body": "Our work begins long before the first design or campaign. We take the time to understand who you are, who you need to reach and what stands in the way — then build the strategy, identity and communication to move you forward, and stay to refine it as results come in.",
-      "points": [
-        { "title": "Understanding the client", "text": "Your objectives, audiences, market and constraints come first." },
-        { "title": "Developing effective strategies", "text": "Clear plans, grounded in research rather than assumption." },
-        { "title": "Creating meaningful communication", "text": "Messages that are accurate, relevant and worth paying attention to." },
-        { "title": "Strengthening brand identity", "text": "A consistent presence that people recognize and trust." },
-        { "title": "Executing creative campaigns", "text": "Considered ideas, carried through to a high standard." },
-        { "title": "Supporting sustainable growth", "text": "Progress that is measured, reviewed and built upon." }
-      ]
-    },
-    "audiences": {
-      "heading": "Built for ambition. Designed for impact."
-    }
-  },
-
-  "approach": [
-    { "title": "Discover", "text": "We begin by understanding you — your objectives, your audience, your market and the challenges in front of you." },
-    { "title": "Strategize", "text": "We develop a strategy grounded in that research, with clear priorities and agreed measures of progress." },
-    { "title": "Create", "text": "We develop the creative concepts, communication and campaign assets that bring the strategy to life." },
-    { "title": "Execute", "text": "We implement across the platforms and channels that matter, to an agreed plan and standard." },
-    { "title": "Optimize", "text": "We evaluate performance honestly and improve execution based on what the results show." }
-  ],
-
-  "principles": [
-    { "title": "Strategy-led execution", "text": "Every piece of work traces back to a clear objective. We decide what needs to be achieved before deciding what to make." },
-    { "title": "Creative thinking", "text": "We look for the idea that makes a message clearer and more memorable — not novelty for its own sake." },
-    { "title": "Integrated capabilities", "text": "Strategy, branding, communications, digital and web development work together under one considered direction." },
-    { "title": "Client-focused solutions", "text": "Recommendations are shaped around your situation, your audience and your resources, not a standard package." },
-    { "title": "Professional communication", "text": "Clear timelines, regular updates and straightforward advice — including when the answer is not what you hoped to hear." },
-    { "title": "Quality-driven delivery", "text": "Work is reviewed carefully before it reaches you, and before it reaches your audience." },
-    { "title": "Measurable objectives", "text": "We agree how progress will be measured at the outset, and report against it openly." }
-  ]
+  "shareImage": null
 }

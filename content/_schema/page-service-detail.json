@@ -1,0 +1,163 @@
+{
+  "$format": 1,
+  "id": "page-service-detail",
+  "label": "Each service page",
+  "group": "Pages",
+  "order": 45,
+  "kind": "object",
+  "file": "content/pages/service-detail.json",
+  "preview": "/services/digital-marketing",
+  "help": "Labels shared by every service page. Each service's own text is under Services.",
+  "fields": [
+    {
+      "name": "eyebrow",
+      "label": "Small label",
+      "type": "text",
+      "help": "Placeholders: {number} {title}"
+    },
+    {
+      "name": "primary",
+      "label": "First button",
+      "type": "link"
+    },
+    {
+      "name": "secondary",
+      "label": "Second button",
+      "type": "link"
+    },
+    {
+      "name": "problems",
+      "label": "Problems we address",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "offerings",
+      "label": "What we offer",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true,
+          "help": "Placeholders: {title}"
+        }
+      ]
+    },
+    {
+      "name": "commitments",
+      "label": "Our commitments",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "process",
+      "label": "Our process",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "stepLabel",
+          "label": "Step label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "work",
+      "label": "Relevant work",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "faqs",
+      "label": "Questions",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "relatedLabel",
+      "label": "Related industries label",
+      "type": "text"
+    },
+    {
+      "name": "nextLabel",
+      "label": "Next service label",
+      "type": "text"
+    },
+    {
+      "name": "areaServed",
+      "label": "Areas served (search engines)",
+      "type": "list",
+      "of": {
+        "name": "area",
+        "label": "Area",
+        "type": "text"
+      }
+    }
+  ]
+}

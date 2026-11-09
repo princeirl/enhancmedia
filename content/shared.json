@@ -1,0 +1,76 @@
+{
+  "cta": {
+    "eyebrow": "Let’s talk",
+    "title": "Your next chapter starts with a conversation.",
+    "text": "Have an idea, a challenge or an ambition worth pursuing? Let’s discuss how we can bring it to life.",
+    "primary": {
+      "label": "Let’s talk",
+      "href": "/contact"
+    },
+    "secondary": {
+      "label": "Book a consultation",
+      "href": "/book-a-consultation"
+    }
+  },
+  "approach": [
+    {
+      "title": "Discover",
+      "text": "We begin by understanding you — your objectives, your audience, your market and the challenges in front of you."
+    },
+    {
+      "title": "Strategize",
+      "text": "We develop a strategy grounded in that research, with clear priorities and agreed measures of progress."
+    },
+    {
+      "title": "Create",
+      "text": "We develop the creative concepts, communication and campaign assets that bring the strategy to life."
+    },
+    {
+      "title": "Execute",
+      "text": "We implement across the platforms and channels that matter, to an agreed plan and standard."
+    },
+    {
+      "title": "Optimize",
+      "text": "We evaluate performance honestly and improve execution based on what the results show."
+    }
+  ],
+  "principles": [
+    {
+      "title": "Strategy-led execution",
+      "text": "Every piece of work traces back to a clear objective. We decide what needs to be achieved before deciding what to make."
+    },
+    {
+      "title": "Creative thinking",
+      "text": "We look for the idea that makes a message clearer and more memorable — not novelty for its own sake."
+    },
+    {
+      "title": "Integrated capabilities",
+      "text": "Strategy, branding, communications, digital and web development work together under one considered direction."
+    },
+    {
+      "title": "Client-focused solutions",
+      "text": "Recommendations are shaped around your situation, your audience and your resources, not a standard package."
+    },
+    {
+      "title": "Professional communication",
+      "text": "Clear timelines, regular updates and straightforward advice — including when the answer is not what you hoped to hear."
+    },
+    {
+      "title": "Quality-driven delivery",
+      "text": "Work is reviewed carefully before it reaches you, and before it reaches your audience."
+    },
+    {
+      "title": "Measurable objectives",
+      "text": "We agree how progress will be measured at the outset, and report against it openly."
+    }
+  ],
+  "labels": {
+    "home": "Home",
+    "skipToContent": "Skip to content",
+    "viewCaseStudy": "View case study",
+    "legalEyebrow": "Legal",
+    "lastUpdated": "Last updated:",
+    "onThisPage": "On this page",
+    "opensInNewTab": "(opens in a new tab)"
+  }
+}

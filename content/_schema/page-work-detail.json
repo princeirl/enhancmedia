@@ -1,0 +1,105 @@
+{
+  "$format": 1,
+  "id": "page-work-detail",
+  "label": "Each case study page",
+  "group": "Pages",
+  "order": 65,
+  "kind": "object",
+  "file": "content/pages/work-detail.json",
+  "help": "Labels shared by every case study.",
+  "fields": [
+    {
+      "name": "facts",
+      "label": "Facts labels",
+      "type": "object",
+      "fields": [
+        {
+          "name": "client",
+          "label": "Client",
+          "type": "text"
+        },
+        {
+          "name": "industry",
+          "label": "Industry",
+          "type": "text"
+        },
+        {
+          "name": "services",
+          "label": "Services",
+          "type": "text"
+        },
+        {
+          "name": "year",
+          "label": "Year",
+          "type": "text"
+        },
+        {
+          "name": "confidential",
+          "label": "When the client is not named",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "sections",
+      "label": "Section labels",
+      "type": "object",
+      "fields": [
+        {
+          "name": "background",
+          "label": "Background",
+          "type": "text"
+        },
+        {
+          "name": "challenge",
+          "label": "Challenge",
+          "type": "text"
+        },
+        {
+          "name": "strategy",
+          "label": "Strategy",
+          "type": "text"
+        },
+        {
+          "name": "execution",
+          "label": "Execution",
+          "type": "text"
+        },
+        {
+          "name": "deliverables",
+          "label": "Deliverables",
+          "type": "text"
+        },
+        {
+          "name": "results",
+          "label": "Results",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "coverAlt",
+      "label": "Cover image description",
+      "type": "text",
+      "help": "Placeholders: {title}"
+    },
+    {
+      "name": "related",
+      "label": "Related projects",
+      "type": "object",
+      "fields": [
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "link",
+          "label": "Link",
+          "type": "link"
+        }
+      ]
+    }
+  ]
+}

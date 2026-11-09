@@ -1,0 +1,74 @@
+{
+  "seo": {
+    "title": "About Us",
+    "description": "Enhanc Media is a strategic marketing, branding and communications agency. Learn who we are, what we believe and how we work."
+  },
+  "hero": {
+    "eyebrow": "About Enhanc Media",
+    "title": "Built on ideas. Driven by strategy. Focused on impact.",
+    "lead": "Enhanc Media is a full-service strategic marketing and communications agency helping businesses, individuals and organizations build stronger brands, establish their presence and create meaningful influence.",
+    "art": 3
+  },
+  "whoWeAre": {
+    "eyebrow": "Who we are",
+    "heading": "A strategic partner, not just a service provider.",
+    "paragraphs": [
+      "We bring together strategy, branding, communications, digital marketing and web development under one considered direction. That lets us look at a client’s presence as a whole, from the first impression to the final enquiry, rather than as a set of disconnected tasks.",
+      "Our clients range from startups and established companies to creators, public figures, political leaders, educational institutions and social organizations, in India and internationally. Their needs differ widely. What they share is the need to be understood clearly and represented well."
+    ]
+  },
+  "pillars": [
+    {
+      "label": "Our vision",
+      "text": "To be the strategic partner that ambitious businesses, individuals and organizations trust to shape how they are seen, understood and remembered."
+    },
+    {
+      "label": "Our mission",
+      "text": "To combine clear strategy, considered creativity and responsible communication, so our clients build stronger brands, earn credibility and grow with purpose."
+    },
+    {
+      "label": "Our philosophy",
+      "text": "Understanding comes before action. We listen first, decide what success means, and only then design what will achieve it, measuring honestly along the way."
+    }
+  ],
+  "difference": {
+    "eyebrow": "What makes us different",
+    "heading": "How our approach differs.",
+    "items": [
+      {
+        "title": "Strategy before output",
+        "text": "We agree what needs to be achieved before deciding what to make. Every deliverable traces back to an objective."
+      },
+      {
+        "title": "One integrated team",
+        "text": "Branding, communications, digital marketing and web development are planned together, so your presence is coherent across every touchpoint."
+      },
+      {
+        "title": "Breadth of audiences",
+        "text": "We work with companies, individuals, public figures, institutions and social organizations, and adapt our approach to each."
+      },
+      {
+        "title": "Responsibility as standard",
+        "text": "Accurate claims, lawful methods and respect for privacy are part of how we work, especially in public and political communication."
+      }
+    ]
+  },
+  "expertise": {
+    "eyebrow": "Areas of expertise",
+    "heading": "Seven disciplines, one direction.",
+    "link": {
+      "label": "All services",
+      "href": "/services"
+    },
+    "itemLink": "Learn more →"
+  },
+  "founder": {
+    "eyebrow": "Founder",
+    "person": "prince-yadav",
+    "fallbackBio": "{site} was founded by {name}, who leads the agency as its {role}.",
+    "link": {
+      "label": "Leadership",
+      "href": "/leadership"
+    }
+  }
+}

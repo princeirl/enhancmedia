@@ -1,0 +1,13 @@
+{
+  "eyebrow": "Error 404",
+  "heading": "This page could not be found.",
+  "text": "The page may have moved, or the address may be incorrect.",
+  "primary": {
+    "label": "Return home",
+    "href": "/"
+  },
+  "secondary": {
+    "label": "Contact us",
+    "href": "/contact"
+  }
+}

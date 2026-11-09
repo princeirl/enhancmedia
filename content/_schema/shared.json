@@ -1,0 +1,135 @@
+{
+  "$format": 1,
+  "id": "shared",
+  "label": "Shared sections",
+  "group": "Settings",
+  "order": 30,
+  "kind": "object",
+  "file": "content/shared.json",
+  "fields": [
+    {
+      "name": "cta",
+      "label": "Closing call to action (every page)",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "textarea"
+        },
+        {
+          "name": "primary",
+          "label": "First button",
+          "type": "link"
+        },
+        {
+          "name": "secondary",
+          "label": "Second button",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "name": "approach",
+      "label": "Our approach — stages",
+      "type": "list",
+      "of": {
+        "name": "stage",
+        "label": "Stage",
+        "type": "object",
+        "fields": [
+          {
+            "name": "title",
+            "label": "Title",
+            "type": "text",
+            "required": true
+          },
+          {
+            "name": "text",
+            "label": "Text",
+            "type": "textarea"
+          }
+        ]
+      },
+      "itemTitle": "title",
+      "help": "Shown on the home and services pages."
+    },
+    {
+      "name": "principles",
+      "label": "Why work with us — principles",
+      "type": "list",
+      "of": {
+        "name": "principle",
+        "label": "Principle",
+        "type": "object",
+        "fields": [
+          {
+            "name": "title",
+            "label": "Title",
+            "type": "text",
+            "required": true
+          },
+          {
+            "name": "text",
+            "label": "Text",
+            "type": "textarea"
+          }
+        ]
+      },
+      "itemTitle": "title"
+    },
+    {
+      "name": "labels",
+      "label": "Small labels",
+      "type": "object",
+      "fields": [
+        {
+          "name": "home",
+          "label": "“Home” (breadcrumbs)",
+          "type": "text"
+        },
+        {
+          "name": "skipToContent",
+          "label": "“Skip to content”",
+          "type": "text"
+        },
+        {
+          "name": "viewCaseStudy",
+          "label": "Case study card link",
+          "type": "text"
+        },
+        {
+          "name": "legalEyebrow",
+          "label": "Legal pages label",
+          "type": "text"
+        },
+        {
+          "name": "lastUpdated",
+          "label": "“Last updated:”",
+          "type": "text"
+        },
+        {
+          "name": "onThisPage",
+          "label": "“On this page”",
+          "type": "text"
+        },
+        {
+          "name": "opensInNewTab",
+          "label": "“(opens in a new tab)”",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

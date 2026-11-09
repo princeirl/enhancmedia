@@ -1,0 +1,129 @@
+{
+  "$format": 1,
+  "id": "page-industry-detail",
+  "label": "Each industry page",
+  "group": "Pages",
+  "order": 55,
+  "kind": "object",
+  "file": "content/pages/industry-detail.json",
+  "preview": "/industries/businesses-startups",
+  "help": "Labels shared by every industry page. Each industry's own text is under Industries.",
+  "fields": [
+    {
+      "name": "eyebrow",
+      "label": "Small label",
+      "type": "text",
+      "help": "Placeholders: {title}"
+    },
+    {
+      "name": "button",
+      "label": "Button",
+      "type": "link"
+    },
+    {
+      "name": "understanding",
+      "label": "Understanding",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "challenges",
+      "label": "Challenges",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "help",
+      "label": "How we help",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "servicesLabel",
+          "label": "Services label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "approach",
+      "label": "Our approach",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "button",
+          "label": "Button",
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "name": "work",
+      "label": "Relevant work",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "othersLabel",
+      "label": "Other industries label",
+      "type": "text"
+    }
+  ]
+}

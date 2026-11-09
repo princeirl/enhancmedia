@@ -1,0 +1,33 @@
+{
+  "eyebrow": "For {title}",
+  "button": {
+    "label": "Start a conversation",
+    "href": "/contact"
+  },
+  "understanding": {
+    "eyebrow": "Understanding",
+    "heading": "What we understand about your world."
+  },
+  "challenges": {
+    "eyebrow": "Challenges",
+    "heading": "The challenges we hear most often."
+  },
+  "help": {
+    "eyebrow": "How we help",
+    "heading": "Possible solutions.",
+    "servicesLabel": "Applicable services"
+  },
+  "approach": {
+    "eyebrow": "Our approach",
+    "heading": "How we work with you.",
+    "button": {
+      "label": "Book a consultation",
+      "href": "/book-a-consultation"
+    }
+  },
+  "work": {
+    "eyebrow": "Relevant work",
+    "heading": "Related case studies."
+  },
+  "othersLabel": "Other industries"
+}

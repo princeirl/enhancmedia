@@ -1,0 +1,181 @@
+{
+  "$format": 1,
+  "id": "site",
+  "label": "Site settings",
+  "group": "Settings",
+  "order": 10,
+  "kind": "object",
+  "file": "content/site.json",
+  "fields": [
+    {
+      "name": "name",
+      "label": "Site name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "url",
+      "label": "Website address",
+      "type": "url",
+      "required": true,
+      "help": "The live address, used for links shared on search engines and social media."
+    },
+    {
+      "name": "legalName",
+      "label": "Legal entity name",
+      "type": "text",
+      "nullable": true,
+      "help": "Shown in the footer and legal pages. Empty uses the site name."
+    },
+    {
+      "name": "tagline",
+      "label": "Tagline",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "description",
+      "label": "Site description",
+      "type": "textarea",
+      "required": true,
+      "help": "Used in the footer and as the default search description."
+    },
+    {
+      "name": "founder",
+      "label": "Founder's name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "brand",
+      "label": "Logo",
+      "type": "object",
+      "fields": [
+        {
+          "name": "logoOnLight",
+          "label": "Logo for light backgrounds",
+          "type": "image",
+          "nullable": true,
+          "help": "SVG or PNG. Empty shows the interim wordmark."
+        },
+        {
+          "name": "logoOnDark",
+          "label": "Logo for dark backgrounds",
+          "type": "image",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "shareImage",
+      "label": "Social sharing image",
+      "type": "image",
+      "nullable": true,
+      "help": "1200×630. Empty uses the generated default."
+    },
+    {
+      "name": "contact",
+      "label": "Contact details",
+      "type": "object",
+      "fields": [
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "phone",
+          "label": "Telephone",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "whatsapp",
+          "label": "WhatsApp number",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "address",
+          "label": "Address",
+          "type": "textarea",
+          "nullable": true
+        },
+        {
+          "name": "hours",
+          "label": "Opening hours",
+          "type": "text",
+          "nullable": true
+        }
+      ],
+      "help": "Empty hides a field everywhere on the site."
+    },
+    {
+      "name": "social",
+      "label": "Social profiles",
+      "type": "list",
+      "of": {
+        "name": "profile",
+        "label": "Profile",
+        "type": "object",
+        "fields": [
+          {
+            "name": "label",
+            "label": "Name",
+            "type": "text",
+            "required": true
+          },
+          {
+            "name": "url",
+            "label": "Address",
+            "type": "url",
+            "required": true
+          }
+        ]
+      },
+      "itemTitle": "label"
+    },
+    {
+      "name": "forms",
+      "label": "Forms",
+      "type": "object",
+      "fields": [
+        {
+          "name": "endpoint",
+          "label": "Form endpoint",
+          "type": "text",
+          "required": true,
+          "advanced": true
+        },
+        {
+          "name": "turnstileSiteKey",
+          "label": "Spam-protection site key",
+          "type": "text",
+          "nullable": true,
+          "advanced": true
+        }
+      ]
+    },
+    {
+      "name": "booking",
+      "label": "Online booking",
+      "type": "object",
+      "fields": [
+        {
+          "name": "provider",
+          "label": "Scheduling service",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "url",
+          "label": "Booking page address",
+          "type": "url",
+          "nullable": true,
+          "help": "Embedded on the Book a Consultation page. Empty shows the request form."
+        }
+      ]
+    }
+  ]
+}

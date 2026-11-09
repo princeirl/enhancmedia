@@ -1,0 +1,67 @@
+{
+  "$format": 1,
+  "id": "insights",
+  "label": "Insights articles",
+  "group": "Collections",
+  "order": 50,
+  "kind": "markdown-folder",
+  "folder": "content/insights",
+  "preview": "/insights/{slug}",
+  "item": {
+    "label": "Article",
+    "title": "title",
+    "key": "slug",
+    "fields": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "category",
+        "label": "Category",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "date",
+        "label": "Date",
+        "type": "date",
+        "required": true
+      },
+      {
+        "name": "status",
+        "label": "Status",
+        "type": "select",
+        "options": [
+          {
+            "value": "draft",
+            "label": "Draft — preview only"
+          },
+          {
+            "value": "published",
+            "label": "Published — on the live site"
+          }
+        ],
+        "help": "Only published items appear on www.enhancmedia.com."
+      },
+      {
+        "name": "excerpt",
+        "label": "Excerpt",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "name": "cover",
+        "label": "Cover image",
+        "type": "image",
+        "optional": true,
+        "nullable": true
+      }
+    ]
+  },
+  "body": {
+    "label": "Article text"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "$format": 1,
+  "id": "page-book",
+  "label": "Book a Consultation",
+  "group": "Pages",
+  "order": 90,
+  "kind": "object",
+  "file": "content/pages/book-a-consultation.json",
+  "preview": "/book-a-consultation",
+  "fields": [
+    {
+      "name": "seo",
+      "label": "Search & sharing",
+      "type": "object",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Page title",
+          "type": "text",
+          "nullable": true,
+          "help": "Shown in the browser tab and search results. Empty uses the site name and tagline."
+        },
+        {
+          "name": "description",
+          "label": "Description",
+          "type": "textarea",
+          "required": true,
+          "max": 300,
+          "help": "One or two sentences for search results."
+        }
+      ]
+    },
+    {
+      "name": "hero",
+      "label": "Top of page",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "lead",
+          "label": "Introduction",
+          "type": "textarea"
+        },
+        {
+          "name": "art",
+          "label": "Background pattern",
+          "type": "number",
+          "min": 0,
+          "max": 5,
+          "help": "0–5: which abstract line drawing sits behind the heading."
+        }
+      ]
+    },
+    {
+      "name": "expect",
+      "label": "What to expect",
+      "type": "list",
+      "of": {
+        "name": "item",
+        "label": "Step",
+        "type": "object",
+        "fields": [
+          {
+            "name": "title",
+            "label": "Title",
+            "type": "text",
+            "required": true
+          },
+          {
+            "name": "text",
+            "label": "Text",
+            "type": "textarea"
+          }
+        ]
+      },
+      "itemTitle": "title"
+    },
+    {
+      "name": "embed",
+      "label": "Booking calendar",
+      "type": "object",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Calendar title (screen readers)",
+          "type": "text"
+        },
+        {
+          "name": "trouble",
+          "label": "“Trouble viewing” text",
+          "type": "text"
+        },
+        {
+          "name": "link",
+          "label": "Link label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "request",
+      "label": "Request form",
+      "type": "object",
+      "fields": [
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "textarea"
+        }
+      ]
+    }
+  ]
+}

@@ -1,18 +1,15 @@
 import Link from "next/link";
 import { Artwork, ArticleCard, ButtonLink, CtaBand, Portrait, ProjectCard, SectionHeading, DraftMark } from "@/components/ui";
-import { industries, insights, services, site, team, work } from "@/lib/content";
+import { industries, insights, page, services, shared, team, work } from "@/lib/content";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta({
-  description:
-    "Enhanc Media is a strategic marketing, branding and communications agency for businesses, individuals and organizations in India and international markets.",
-  path: "/",
-});
+const h = page("home");
+
+export const metadata = pageMeta({ ...h.seo, path: "/" });
 
 export default function Home() {
-  const h = site.home;
-  const projects = work().slice(0, 4);
-  const articles = insights().slice(0, 3);
+  const projects = work().slice(0, h.work.count);
+  const articles = insights().slice(0, h.insights.count);
   const people = team();
 
   return (
@@ -43,12 +40,12 @@ export default function Home() {
               {h.hero.text}
             </p>
             <div className="rise-in mt-11 flex flex-col gap-4 sm:flex-row" style={{ ["--d" as string]: "600ms" }}>
-              <ButtonLink href="/services" tone="light">Explore our services</ButtonLink>
-              <ButtonLink href="/contact" tone="light" variant="outline">Start a project</ButtonLink>
+              <ButtonLink href={h.hero.primary.href} tone="light">{h.hero.primary.label}</ButtonLink>
+              <ButtonLink href={h.hero.secondary.href} tone="light" variant="outline">{h.hero.secondary.label}</ButtonLink>
             </div>
           </div>
           <div className="mt-20 grid grid-cols-2 gap-6 border-t border-line-dark pt-8 text-[0.72rem] font-medium uppercase tracking-[0.2em] text-mist sm:grid-cols-4">
-            {["Strategy", "Branding", "Communications", "Growth"].map((w, i) => (
+            {h.hero.pillars.map((w, i) => (
               <span key={w} className="rise-in flex items-center gap-3" style={{ ["--d" as string]: `${700 + i * 80}ms` }}>
                 <span className="text-gold">0{i + 1}</span>
                 {w}
@@ -62,7 +59,7 @@ export default function Home() {
       <section className="bg-paper py-24 md:py-36">
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <SectionHeading eyebrow="Who we are" index="01" title={h.intro.heading} />
+            <SectionHeading eyebrow={h.intro.eyebrow} index="01" title={h.intro.heading} />
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
             <p className="reveal font-heading text-2xl font-medium leading-snug text-ink md:text-[1.75rem]">{h.intro.lead}</p>
@@ -77,7 +74,7 @@ export default function Home() {
               ))}
             </ul>
             <div className="reveal mt-12">
-              <ButtonLink href="/about" variant="text">More about us</ButtonLink>
+              <ButtonLink href={h.intro.link.href} variant="text">{h.intro.link.label}</ButtonLink>
             </div>
           </div>
         </div>
@@ -87,10 +84,8 @@ export default function Home() {
       <section className="border-t border-line bg-white py-24 md:py-36">
         <div className="container-x">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <SectionHeading eyebrow="Our expertise" index="02" title="What we do" className="max-w-2xl" />
-            <p className="reveal max-w-md text-lg leading-relaxed text-muted">
-              Seven integrated disciplines, working under one strategic direction.
-            </p>
+            <SectionHeading eyebrow={h.services.eyebrow} index="02" title={h.services.heading} className="max-w-2xl" />
+            <p className="reveal max-w-md text-lg leading-relaxed text-muted">{h.services.text}</p>
           </div>
           <ol className="mt-16 border-t border-ink">
             {services.map((s, i) => (
@@ -108,7 +103,7 @@ export default function Home() {
                   </h3>
                   <p className="text-[0.98rem] leading-relaxed text-muted md:col-span-4">{s.short}</p>
                   <span className="mt-2 inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ink md:col-span-2 md:mt-0 md:justify-end">
-                    Learn more
+                    {h.services.itemLink}
                     <span className="h-px w-5 bg-gold transition-all duration-500 group-hover:w-9" aria-hidden />
                   </span>
                 </Link>
@@ -122,10 +117,8 @@ export default function Home() {
       <section className="bg-ink py-24 text-white md:py-36">
         <div className="container-x">
           <div className="grid gap-10 lg:grid-cols-12">
-            <SectionHeading tone="light" eyebrow="Who we work with" index="03" title={h.audiences.heading} className="lg:col-span-7" />
-            <p className="reveal self-end text-lg leading-relaxed text-mist lg:col-span-4 lg:col-start-9">
-              Every audience has its own expectations and constraints. Our work is shaped to each.
-            </p>
+            <SectionHeading tone="light" eyebrow={h.audiences.eyebrow} index="03" title={h.audiences.heading} className="lg:col-span-7" />
+            <p className="reveal self-end text-lg leading-relaxed text-mist lg:col-span-4 lg:col-start-9">{h.audiences.text}</p>
           </div>
           <ul className="mt-16 grid border-l border-t border-line-dark sm:grid-cols-2 lg:grid-cols-4">
             {industries.map((ind, i) => (
@@ -135,18 +128,18 @@ export default function Home() {
                   <h3 className="mt-8 font-heading text-xl font-semibold leading-snug">{ind.title}</h3>
                   <p className="mt-3 flex-1 text-[0.92rem] leading-relaxed text-mist">{ind.short}</p>
                   <span className="mt-8 inline-flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.2em]">
-                    Explore
+                    {h.audiences.itemLink}
                     <span className="h-px w-5 bg-gold transition-all duration-500 group-hover:w-9" aria-hidden />
                   </span>
                 </Link>
               </li>
             ))}
             <li className="reveal border-b border-r border-line-dark">
-              <Link href="/contact" className="group flex h-full flex-col justify-between bg-gold p-7 text-ink md:p-8">
-                <span className="eyebrow">Not listed?</span>
-                <span className="mt-8 font-heading text-xl font-semibold leading-snug">Tell us about your organization and what you need.</span>
+              <Link href={h.audiences.other.link.href} className="group flex h-full flex-col justify-between bg-gold p-7 text-ink md:p-8">
+                <span className="eyebrow">{h.audiences.other.eyebrow}</span>
+                <span className="mt-8 font-heading text-xl font-semibold leading-snug">{h.audiences.other.text}</span>
                 <span className="mt-8 inline-flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.2em]">
-                  Start a conversation
+                  {h.audiences.other.link.label}
                   <span className="h-px w-5 bg-ink transition-all duration-500 group-hover:w-9" aria-hidden />
                 </span>
               </Link>
@@ -160,8 +153,8 @@ export default function Home() {
         <section className="bg-paper py-24 md:py-36">
           <div className="container-x">
             <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-              <SectionHeading eyebrow="Selected work" index="04" title="Ideas into execution." className="max-w-2xl" />
-              <div className="reveal"><ButtonLink href="/work" variant="text">View all work</ButtonLink></div>
+              <SectionHeading eyebrow={h.work.eyebrow} index="04" title={h.work.heading} className="max-w-2xl" />
+              <div className="reveal"><ButtonLink href={h.work.link.href} variant="text">{h.work.link.label}</ButtonLink></div>
             </div>
             <div className="mt-16 grid gap-x-8 gap-y-16 md:grid-cols-2">
               {projects.map((p, i) => (
@@ -176,20 +169,20 @@ export default function Home() {
       <section className="border-t border-line bg-white py-24 md:py-36">
         <div className="container-x">
           <SectionHeading
-            eyebrow="Our approach"
+            eyebrow={h.approach.eyebrow}
             index="05"
-            title="Thoughtful strategy. Purposeful execution."
-            lead="A clear, repeatable method that keeps every engagement focused on its objectives."
+            title={h.approach.heading}
+            lead={h.approach.lead}
             className="max-w-3xl"
           />
           <ol className="relative mt-20 grid gap-12 md:grid-cols-5 md:gap-6">
             <span className="absolute left-[7px] top-2 h-[calc(100%-1rem)] w-px bg-line md:left-0 md:top-[7px] md:h-px md:w-full" aria-hidden />
-            {site.approach.map((st, i) => (
+            {shared.approach.map((st, i) => (
               <li key={st.title} className="reveal relative pl-10 md:pl-0 md:pt-12" style={{ ["--reveal-delay" as string]: `${i * 110}ms` }}>
                 <span className="absolute left-0 top-1 block h-[15px] w-[15px] border border-gold bg-white md:top-0" aria-hidden>
                   <span className="absolute inset-[4px] bg-gold" />
                 </span>
-                <p className="text-[0.7rem] font-semibold tracking-[0.2em] text-gold-ink">STAGE {String(i + 1).padStart(2, "0")}</p>
+                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-gold-ink">{h.approach.stepLabel} {String(i + 1).padStart(2, "0")}</p>
                 <h3 className="mt-3 font-heading text-2xl font-semibold uppercase tracking-[0.04em] text-ink">{st.title}</h3>
                 <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">{st.text}</p>
               </li>
@@ -202,8 +195,8 @@ export default function Home() {
       <section className="bg-paper py-24 md:py-36">
         <div className="container-x">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <SectionHeading eyebrow="Leadership" index="06" title="The people behind Enhanc Media." className="max-w-2xl" />
-            <div className="reveal"><ButtonLink href="/leadership" variant="text">Meet the leadership</ButtonLink></div>
+            <SectionHeading eyebrow={h.leadership.eyebrow} index="06" title={h.leadership.heading} className="max-w-2xl" />
+            <div className="reveal"><ButtonLink href={h.leadership.link.href} variant="text">{h.leadership.link.label}</ButtonLink></div>
           </div>
           <ul className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {people.map((p, i) => (
@@ -228,13 +221,13 @@ export default function Home() {
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-32">
-              <SectionHeading eyebrow="Why Enhanc Media" index="07" title="Why work with Enhanc Media?" />
-              <p className="reveal mt-6 text-lg leading-relaxed text-muted">The principles that shape how we work with every client.</p>
+              <SectionHeading eyebrow={h.why.eyebrow} index="07" title={h.why.heading} />
+              <p className="reveal mt-6 text-lg leading-relaxed text-muted">{h.why.text}</p>
             </div>
           </div>
           <ul className="grid gap-px bg-line lg:col-span-8 sm:grid-cols-2">
-            {site.principles.map((p, i) => (
-              <li key={p.title} className={`reveal bg-white p-7 md:p-9 ${i === site.principles.length - 1 ? "sm:col-span-2" : ""}`}>
+            {shared.principles.map((p, i) => (
+              <li key={p.title} className={`reveal bg-white p-7 md:p-9 ${i === shared.principles.length - 1 ? "sm:col-span-2" : ""}`}>
                 <p className="text-[0.7rem] font-semibold tracking-[0.2em] text-gold-ink">{String(i + 1).padStart(2, "0")}</p>
                 <h3 className="mt-4 font-heading text-xl font-semibold text-ink">{p.title}</h3>
                 <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">{p.text}</p>
@@ -249,8 +242,8 @@ export default function Home() {
         <section className="bg-paper py-24 md:py-36">
           <div className="container-x">
             <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-              <SectionHeading eyebrow="Insights" index="08" title="Thinking beyond the ordinary." className="max-w-2xl" />
-              <div className="reveal"><ButtonLink href="/insights" variant="text">All insights</ButtonLink></div>
+              <SectionHeading eyebrow={h.insights.eyebrow} index="08" title={h.insights.heading} className="max-w-2xl" />
+              <div className="reveal"><ButtonLink href={h.insights.link.href} variant="text">{h.insights.link.label}</ButtonLink></div>
             </div>
             <div className="mt-16 grid gap-x-8 gap-y-14 md:grid-cols-3">
               {articles.map((a, i) => (

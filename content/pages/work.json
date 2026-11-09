@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Our Work",
+    "description": "Selected branding, digital marketing, web development, personal branding, PR and political communication projects by Enhanc Media."
+  },
+  "hero": {
+    "eyebrow": "Our work",
+    "title": "Ideas into execution.",
+    "lead": "A selection of our work, presented with the permission of the clients involved: the challenge, the strategy, what we executed and what it achieved.",
+    "art": 2
+  },
+  "categories": [
+    "Branding",
+    "Digital Marketing",
+    "Web Development",
+    "Personal Branding",
+    "PR & Communications",
+    "Political Marketing"
+  ],
+  "filterAll": "All",
+  "filterLabel": "Filter projects by category",
+  "empty": {
+    "eyebrow": "Case studies",
+    "heading": "Case studies are being prepared for publication.",
+    "text": "Each project is published only once the client has approved how it is presented. In the meantime, we are glad to discuss relevant experience in a private conversation.",
+    "primary": {
+      "label": "Start a conversation",
+      "href": "/contact"
+    },
+    "secondary": {
+      "label": "Explore our services",
+      "href": "/services"
+    }
+  }
+}

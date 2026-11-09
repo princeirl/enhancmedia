@@ -5,17 +5,21 @@ import { useState, type ReactNode } from "react";
 export function WorkFilter({
   categories,
   items,
+  allLabel,
+  groupLabel,
 }: {
   categories: readonly string[];
+  allLabel: string;
+  groupLabel: string;
   items: { key: string; category: string; node: ReactNode }[];
 }) {
-  const [active, setActive] = useState<string>("All");
+  const [active, setActive] = useState<string>(allLabel);
   const present = categories.filter((c) => items.some((i) => i.category === c));
-  const shown = active === "All" ? items : items.filter((i) => i.category === active);
+  const shown = active === allLabel ? items : items.filter((i) => i.category === active);
   return (
     <>
-      <div role="group" aria-label="Filter projects by category" className="flex flex-wrap gap-2">
-        {["All", ...present].map((c) => (
+      <div role="group" aria-label={groupLabel} className="flex flex-wrap gap-2">
+        {[allLabel, ...present].map((c) => (
           <button
             key={c}
             type="button"

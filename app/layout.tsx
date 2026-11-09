@@ -7,7 +7,7 @@ import { Header } from "@/components/Header";
 import { Logo } from "@/components/Logo";
 import { RevealObserver } from "@/components/RevealObserver";
 import { JsonLd, PreviewBanner } from "@/components/ui";
-import { industries, services, site, siteUrl } from "@/lib/content";
+import { industries, navigation, services, shared, site, siteUrl } from "@/lib/content";
 
 // Fonts are downloaded at build time and served from our own origin.
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
@@ -27,32 +27,21 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const nav = [
-  { href: "/", label: "Home" },
-  {
-    href: "/about",
-    label: "About",
-    children: [
-      { href: "/about", label: "About Enhanc Media" },
-      { href: "/leadership", label: "Leadership" },
-    ],
-  },
-  {
-    href: "/services",
-    label: "Services",
-    allLabel: "All services",
-    children: services.map((s) => ({ href: `/services/${s.slug}`, label: s.title })),
-  },
-  {
-    href: "/industries",
-    label: "Industries",
-    allLabel: "All industries",
-    children: industries.map((s) => ({ href: `/industries/${s.slug}`, label: s.title })),
-  },
-  { href: "/work", label: "Our Work" },
-  { href: "/insights", label: "Insights" },
-  { href: "/contact", label: "Contact" },
-];
+// Menu items come from content/navigation.json; "auto" fills a menu with every service or industry.
+const nav = navigation.header.items.map((item) => ({
+  href: item.href,
+  label: item.label,
+  allLabel: item.allLabel ?? undefined,
+  children:
+    item.auto === "services"
+      ? services.map((s) => ({ href: `/services/${s.slug}`, label: s.title }))
+      : item.auto === "industries"
+        ? industries.map((s) => ({ href: `/industries/${s.slug}`, label: s.title }))
+        : item.children.length
+          ? item.children
+          : undefined,
+}));
+const h = navigation.header;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -77,7 +66,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <PreviewBanner />
-        <Header nav={nav} logo={<Logo />} />
+        <Header
+          nav={nav}
+          logo={<Logo />}
+          text={{ cta: h.cta, mobileButtons: h.mobileButtons, openMenu: h.openMenu, closeMenu: h.closeMenu, skip: shared.labels.skipToContent, homeLabel: `${site.name} — ${shared.labels.home.toLowerCase()}` }}
+        />
         <main id="main">{children}</main>
         <Footer />
         <RevealObserver />

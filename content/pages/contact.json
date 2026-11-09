@@ -1,0 +1,28 @@
+{
+  "seo": {
+    "title": "Contact Us",
+    "description": "Tell Enhanc Media about your project, challenge or ambition. We respond to every genuine inquiry."
+  },
+  "hero": {
+    "eyebrow": "Contact",
+    "title": "Let’s start with a conversation.",
+    "lead": "Tell us about your organization, your objectives and what you would like to achieve. We read every inquiry and respond using your preferred contact method.",
+    "art": 0
+  },
+  "direct": {
+    "eyebrow": "Direct contact",
+    "email": "Email",
+    "phone": "Telephone",
+    "whatsapp": "WhatsApp",
+    "fallback": "The form is the quickest way to reach us. Your inquiry goes directly to our team."
+  },
+  "officeLabel": "Office",
+  "consultation": {
+    "heading": "Prefer to talk it through?",
+    "text": "Request a consultation and we will arrange a time that suits you.",
+    "link": {
+      "label": "Book a consultation",
+      "href": "/book-a-consultation"
+    }
+  }
+}

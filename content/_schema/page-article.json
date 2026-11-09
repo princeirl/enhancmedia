@@ -1,0 +1,22 @@
+{
+  "$format": 1,
+  "id": "page-article",
+  "label": "Each article page",
+  "group": "Pages",
+  "order": 75,
+  "kind": "object",
+  "file": "content/pages/article.json",
+  "help": "Labels shared by every article.",
+  "fields": [
+    {
+      "name": "backLink",
+      "label": "Back link",
+      "type": "link"
+    },
+    {
+      "name": "moreHeading",
+      "label": "Further reading heading",
+      "type": "text"
+    }
+  ]
+}

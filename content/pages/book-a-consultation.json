@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Book a Consultation",
+    "description": "Arrange a consultation with Enhanc Media to discuss your brand, communication or growth objectives."
+  },
+  "hero": {
+    "eyebrow": "Book a consultation",
+    "title": "A considered first conversation.",
+    "lead": "A consultation is an opportunity to discuss your situation with us in detail, with no obligation to proceed.",
+    "art": 5
+  },
+  "expect": [
+    {
+      "title": "A focused conversation",
+      "text": "We discuss your objectives, your audience and the challenges you face."
+    },
+    {
+      "title": "Honest perspective",
+      "text": "We share initial thoughts on what could help, and whether we are the right partner."
+    },
+    {
+      "title": "Clear next steps",
+      "text": "If it makes sense to continue, we outline how we would approach the work."
+    }
+  ],
+  "embed": {
+    "title": "Schedule a consultation with Enhanc Media",
+    "trouble": "Trouble viewing the calendar?",
+    "link": "Open the scheduling page"
+  },
+  "request": {
+    "heading": "Request a consultation",
+    "text": "Share a few details and your preferred times. We will confirm a time with you directly."
+  }
+}

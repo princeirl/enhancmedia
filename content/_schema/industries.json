@@ -1,0 +1,100 @@
+{
+  "$format": 1,
+  "id": "industries",
+  "label": "Industries",
+  "group": "Collections",
+  "order": 20,
+  "kind": "list",
+  "file": "content/industries.json",
+  "preview": "/industries/{slug}",
+  "item": {
+    "label": "Industry",
+    "title": "title",
+    "key": "slug",
+    "fields": [
+      {
+        "name": "slug",
+        "label": "Address (slug)",
+        "type": "text",
+        "required": true,
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+        "help": "Lower-case words joined by hyphens. Changing it changes the page address."
+      },
+      {
+        "name": "title",
+        "label": "Name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "short",
+        "label": "Short description",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "name": "headline",
+        "label": "Page headline",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "understanding",
+        "label": "Understanding",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "name": "challenges",
+        "label": "Challenges",
+        "type": "list",
+        "of": {
+          "name": "c",
+          "label": "Challenge",
+          "type": "textarea"
+        }
+      },
+      {
+        "name": "services",
+        "label": "Applicable services",
+        "type": "list",
+        "of": {
+          "name": "s",
+          "label": "Service",
+          "type": "reference",
+          "collection": "services"
+        }
+      },
+      {
+        "name": "solutions",
+        "label": "Solutions",
+        "type": "list",
+        "of": {
+          "name": "item",
+          "label": "Solution",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "text",
+              "label": "Text",
+              "type": "textarea"
+            }
+          ]
+        },
+        "itemTitle": "title"
+      },
+      {
+        "name": "approach",
+        "label": "Approach",
+        "type": "textarea",
+        "required": true
+      }
+    ]
+  }
+}

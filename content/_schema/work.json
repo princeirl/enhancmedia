@@ -1,0 +1,160 @@
+{
+  "$format": 1,
+  "id": "work",
+  "label": "Case studies",
+  "group": "Collections",
+  "order": 40,
+  "kind": "list",
+  "file": "content/work.json",
+  "preview": "/work/{slug}",
+  "item": {
+    "label": "Project",
+    "title": "title",
+    "key": "slug",
+    "fields": [
+      {
+        "name": "slug",
+        "label": "Address (slug)",
+        "type": "text",
+        "required": true,
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+        "help": "Lower-case words joined by hyphens. Changing it changes the page address."
+      },
+      {
+        "name": "status",
+        "label": "Status",
+        "type": "select",
+        "options": [
+          {
+            "value": "draft",
+            "label": "Draft — preview only"
+          },
+          {
+            "value": "published",
+            "label": "Published — on the live site"
+          }
+        ],
+        "help": "Only published items appear on www.enhancmedia.com."
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "client",
+        "label": "Client",
+        "type": "text",
+        "nullable": true,
+        "help": "Empty shows “Confidential”."
+      },
+      {
+        "name": "industry",
+        "label": "Industry",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "category",
+        "label": "Category",
+        "type": "select",
+        "optionsFrom": {
+          "file": "content/pages/work.json",
+          "path": "categories"
+        }
+      },
+      {
+        "name": "services",
+        "label": "Services",
+        "type": "list",
+        "of": {
+          "name": "s",
+          "label": "Service",
+          "type": "reference",
+          "collection": "services"
+        }
+      },
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "text",
+        "nullable": true
+      },
+      {
+        "name": "cover",
+        "label": "Cover image",
+        "type": "image",
+        "nullable": true
+      },
+      {
+        "name": "summary",
+        "label": "Summary",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "name": "background",
+        "label": "Client background",
+        "type": "textarea"
+      },
+      {
+        "name": "challenge",
+        "label": "The challenge",
+        "type": "textarea"
+      },
+      {
+        "name": "strategy",
+        "label": "Our strategy",
+        "type": "textarea"
+      },
+      {
+        "name": "execution",
+        "label": "What we executed",
+        "type": "textarea"
+      },
+      {
+        "name": "deliverables",
+        "label": "Deliverables",
+        "type": "list",
+        "of": {
+          "name": "d",
+          "label": "Deliverable",
+          "type": "text"
+        }
+      },
+      {
+        "name": "results",
+        "label": "Verified results",
+        "type": "textarea",
+        "nullable": true,
+        "help": "Only verified, approved results."
+      },
+      {
+        "name": "gallery",
+        "label": "Gallery",
+        "type": "list",
+        "of": {
+          "name": "image",
+          "label": "Image",
+          "type": "object",
+          "fields": [
+            {
+              "name": "src",
+              "label": "Image",
+              "type": "image",
+              "required": true
+            },
+            {
+              "name": "alt",
+              "label": "Description",
+              "type": "text",
+              "required": true
+            }
+          ]
+        },
+        "itemTitle": "alt"
+      }
+    ]
+  }
+}

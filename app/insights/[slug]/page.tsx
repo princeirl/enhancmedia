@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleCard, Breadcrumbs, CtaBand, DraftMark, JsonLd } from "@/components/ui";
-import { formatDate, getArticle, insights, site, siteUrl } from "@/lib/content";
+import { formatDate, getArticle, insights, page, site, siteUrl } from "@/lib/content";
 import { pageMeta } from "@/lib/seo";
 
 type Params = { slug: string };
+
+const c = page("article");
 
 export const dynamicParams = false;
 export function generateStaticParams(): Params[] {
@@ -37,7 +39,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
           mainEntityOfPage: `${siteUrl}/insights/${a.slug}`,
         }}
       />
-      <Breadcrumbs items={[{ href: "/insights", label: "Insights" }, { href: `/insights/${a.slug}`, label: a.title }]} />
+      <Breadcrumbs items={[{ href: "/insights", label: page("insights").hero.eyebrow }, { href: `/insights/${a.slug}`, label: a.title }]} />
       <article>
         <header className="bg-paper">
           <div className="container-x pb-16 pt-16 md:pb-20 md:pt-24">
@@ -57,7 +59,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
           <div className="container-x">
             <div className="prose-em mx-auto" dangerouslySetInnerHTML={{ __html: a.html }} />
             <div className="mx-auto mt-16 max-w-[68ch] border-t border-line pt-8">
-              <Link href="/insights" className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-ink link-draw">← All insights</Link>
+              <Link href={c.backLink.href} className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-ink link-draw">{c.backLink.label}</Link>
             </div>
           </div>
         </div>
@@ -65,7 +67,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
       {more.length > 0 && (
         <section className="border-t border-line bg-paper py-24">
           <div className="container-x">
-            <h2 className="display text-3xl text-ink md:text-4xl">Further reading</h2>
+            <h2 className="display text-3xl text-ink md:text-4xl">{c.moreHeading}</h2>
             <div className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-3">
               {more.map((m, i) => (
                 <ArticleCard key={m.slug} article={m} index={i} />

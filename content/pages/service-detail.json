@@ -1,0 +1,42 @@
+{
+  "eyebrow": "Service {number} · {title}",
+  "primary": {
+    "label": "Discuss your project",
+    "href": "/contact"
+  },
+  "secondary": {
+    "label": "Book a consultation",
+    "href": "/book-a-consultation"
+  },
+  "problems": {
+    "eyebrow": "Problems we address",
+    "heading": "Where we usually begin."
+  },
+  "offerings": {
+    "eyebrow": "What we offer",
+    "heading": "{title}, in detail."
+  },
+  "commitments": {
+    "eyebrow": "Our commitments",
+    "heading": "Responsible by design."
+  },
+  "process": {
+    "eyebrow": "Our process",
+    "heading": "How the work unfolds.",
+    "stepLabel": "Step"
+  },
+  "work": {
+    "eyebrow": "Relevant work",
+    "heading": "Selected projects."
+  },
+  "faqs": {
+    "eyebrow": "Questions",
+    "heading": "Frequently asked."
+  },
+  "relatedLabel": "Often engaged by",
+  "nextLabel": "Next service",
+  "areaServed": [
+    "India",
+    "International"
+  ]
+}

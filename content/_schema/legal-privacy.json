@@ -1,0 +1,34 @@
+{
+  "$format": 1,
+  "id": "legal-privacy",
+  "label": "Privacy Policy",
+  "group": "Legal",
+  "order": 10,
+  "kind": "markdown",
+  "file": "content/legal/privacy-policy.md",
+  "preview": "/privacy-policy",
+  "body": {
+    "label": "Policy text",
+    "help": "Each “## ” heading starts a numbered section. {entity} is the legal name; {contact} is the business email, or the contact form."
+  },
+  "fields": [
+    {
+      "name": "title",
+      "label": "Title",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "name": "updated",
+      "label": "Last updated",
+      "type": "text",
+      "required": true
+    }
+  ]
+}

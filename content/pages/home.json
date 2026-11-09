@@ -1,0 +1,122 @@
+{
+  "seo": {
+    "title": null,
+    "description": "Enhanc Media is a strategic marketing, branding and communications agency for businesses, individuals and organizations in India and international markets."
+  },
+  "hero": {
+    "eyebrow": "Strategy | Creative | Growth",
+    "headline": [
+      "We build brands.",
+      "We shape perceptions.",
+      "We create influence."
+    ],
+    "text": "Strategic thinking, creative execution and powerful communication for businesses, individuals and organizations looking to make a meaningful impact.",
+    "primary": {
+      "label": "Explore our services",
+      "href": "/services"
+    },
+    "secondary": {
+      "label": "Start a project",
+      "href": "/contact"
+    },
+    "pillars": [
+      "Strategy",
+      "Branding",
+      "Communications",
+      "Growth"
+    ]
+  },
+  "intro": {
+    "eyebrow": "Who we are",
+    "heading": "More than marketing. A strategic approach to growth.",
+    "lead": "Enhanc Media is a strategic marketing, branding and communications agency. We work with businesses, individuals and organizations that want to be understood clearly, remembered for the right reasons and positioned to grow.",
+    "body": "Our work begins long before the first design or campaign. We take the time to understand who you are, who you need to reach and what stands in the way — then build the strategy, identity and communication to move you forward, and stay to refine it as results come in.",
+    "points": [
+      {
+        "title": "Understanding the client",
+        "text": "Your objectives, audiences, market and constraints come first."
+      },
+      {
+        "title": "Developing effective strategies",
+        "text": "Clear plans, grounded in research rather than assumption."
+      },
+      {
+        "title": "Creating meaningful communication",
+        "text": "Messages that are accurate, relevant and worth paying attention to."
+      },
+      {
+        "title": "Strengthening brand identity",
+        "text": "A consistent presence that people recognize and trust."
+      },
+      {
+        "title": "Executing creative campaigns",
+        "text": "Considered ideas, carried through to a high standard."
+      },
+      {
+        "title": "Supporting sustainable growth",
+        "text": "Progress that is measured, reviewed and built upon."
+      }
+    ],
+    "link": {
+      "label": "More about us",
+      "href": "/about"
+    }
+  },
+  "services": {
+    "eyebrow": "Our expertise",
+    "heading": "What we do",
+    "text": "Seven integrated disciplines, working under one strategic direction.",
+    "itemLink": "Learn more"
+  },
+  "audiences": {
+    "eyebrow": "Who we work with",
+    "heading": "Built for ambition. Designed for impact.",
+    "text": "Every audience has its own expectations and constraints. Our work is shaped to each.",
+    "itemLink": "Explore",
+    "other": {
+      "eyebrow": "Not listed?",
+      "text": "Tell us about your organization and what you need.",
+      "link": {
+        "label": "Start a conversation",
+        "href": "/contact"
+      }
+    }
+  },
+  "work": {
+    "eyebrow": "Selected work",
+    "heading": "Ideas into execution.",
+    "link": {
+      "label": "View all work",
+      "href": "/work"
+    },
+    "count": 4
+  },
+  "approach": {
+    "eyebrow": "Our approach",
+    "heading": "Thoughtful strategy. Purposeful execution.",
+    "lead": "A clear, repeatable method that keeps every engagement focused on its objectives.",
+    "stepLabel": "Stage"
+  },
+  "leadership": {
+    "eyebrow": "Leadership",
+    "heading": "The people behind Enhanc Media.",
+    "link": {
+      "label": "Meet the leadership",
+      "href": "/leadership"
+    }
+  },
+  "why": {
+    "eyebrow": "Why Enhanc Media",
+    "heading": "Why work with Enhanc Media?",
+    "text": "The principles that shape how we work with every client."
+  },
+  "insights": {
+    "eyebrow": "Insights",
+    "heading": "Thinking beyond the ordinary.",
+    "link": {
+      "label": "All insights",
+      "href": "/insights"
+    },
+    "count": 3
+  }
+}

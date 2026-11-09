@@ -1,0 +1,21 @@
+{
+  "seo": {
+    "title": "Insights",
+    "description": "Perspectives on marketing, branding, communications, personal branding and digital growth from Enhanc Media."
+  },
+  "hero": {
+    "eyebrow": "Insights",
+    "title": "Thinking beyond the ordinary.",
+    "lead": "Perspectives on marketing, branding, communication, technology and growth: what we are learning, and what we believe.",
+    "art": 1
+  },
+  "empty": {
+    "eyebrow": "Coming soon",
+    "heading": "Our first articles are on their way.",
+    "text": "We will publish perspectives on branding, marketing, communications and growth here.",
+    "link": {
+      "label": "Explore our services",
+      "href": "/services"
+    }
+  }
+}

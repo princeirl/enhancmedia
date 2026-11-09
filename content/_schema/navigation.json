@@ -1,0 +1,184 @@
+{
+  "$format": 1,
+  "id": "navigation",
+  "label": "Menus & footer",
+  "group": "Settings",
+  "order": 20,
+  "kind": "object",
+  "file": "content/navigation.json",
+  "fields": [
+    {
+      "name": "header",
+      "label": "Header",
+      "type": "object",
+      "fields": [
+        {
+          "name": "items",
+          "label": "Menu",
+          "type": "list",
+          "of": {
+            "name": "item",
+            "label": "Menu item",
+            "type": "object",
+            "fields": [
+              {
+                "name": "label",
+                "label": "Label",
+                "type": "text",
+                "required": true
+              },
+              {
+                "name": "href",
+                "label": "Link",
+                "type": "url",
+                "required": true
+              },
+              {
+                "name": "auto",
+                "label": "Sub-menu filled automatically",
+                "type": "select",
+                "options": [
+                  {
+                    "value": null,
+                    "label": "None"
+                  },
+                  {
+                    "value": "services",
+                    "label": "All services"
+                  },
+                  {
+                    "value": "industries",
+                    "label": "All industries"
+                  }
+                ],
+                "nullable": true
+              },
+              {
+                "name": "allLabel",
+                "label": "“All …” link label",
+                "type": "text",
+                "nullable": true
+              },
+              {
+                "name": "children",
+                "label": "Sub-menu",
+                "type": "list",
+                "of": {
+                  "name": "link",
+                  "label": "Link",
+                  "type": "link"
+                },
+                "help": "Used when the sub-menu is not filled automatically."
+              }
+            ]
+          },
+          "itemTitle": "label"
+        },
+        {
+          "name": "cta",
+          "label": "Header button",
+          "type": "link"
+        },
+        {
+          "name": "mobileButtons",
+          "label": "Mobile menu buttons",
+          "type": "list",
+          "of": {
+            "name": "link",
+            "label": "Button",
+            "type": "link"
+          }
+        },
+        {
+          "name": "openMenu",
+          "label": "“Open menu” label (screen readers)",
+          "type": "text"
+        },
+        {
+          "name": "closeMenu",
+          "label": "“Close menu” label (screen readers)",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "footer",
+      "label": "Footer",
+      "type": "object",
+      "fields": [
+        {
+          "name": "exploreTitle",
+          "label": "First column title",
+          "type": "text"
+        },
+        {
+          "name": "explore",
+          "label": "First column links",
+          "type": "list",
+          "of": {
+            "name": "link",
+            "label": "Link",
+            "type": "link"
+          }
+        },
+        {
+          "name": "servicesTitle",
+          "label": "Services column title",
+          "type": "text"
+        },
+        {
+          "name": "industriesTitle",
+          "label": "Industries column title",
+          "type": "text"
+        },
+        {
+          "name": "contactTitle",
+          "label": "Contact title",
+          "type": "text"
+        },
+        {
+          "name": "whatsappLabel",
+          "label": "WhatsApp link label",
+          "type": "text"
+        },
+        {
+          "name": "noContact",
+          "label": "When no contact details are set",
+          "type": "object",
+          "fields": [
+            {
+              "name": "text",
+              "label": "Text",
+              "type": "text"
+            },
+            {
+              "name": "link",
+              "label": "Link",
+              "type": "link"
+            }
+          ]
+        },
+        {
+          "name": "followTitle",
+          "label": "Social title",
+          "type": "text"
+        },
+        {
+          "name": "rights",
+          "label": "Copyright line, after the name",
+          "type": "text"
+        },
+        {
+          "name": "legal",
+          "label": "Legal links",
+          "type": "list",
+          "of": {
+            "name": "link",
+            "label": "Link",
+            "type": "link"
+          }
+        }
+      ]
+    }
+  ]
+}

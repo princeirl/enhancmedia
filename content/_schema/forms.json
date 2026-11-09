@@ -1,0 +1,190 @@
+{
+  "$format": 1,
+  "id": "forms",
+  "label": "Inquiry form text",
+  "group": "Settings",
+  "order": 40,
+  "kind": "object",
+  "file": "content/forms.json",
+  "fields": [
+    {
+      "name": "requiredNote",
+      "label": "Required-fields note",
+      "type": "text"
+    },
+    {
+      "name": "fields",
+      "label": "Field labels",
+      "type": "object",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Full name",
+          "type": "text"
+        },
+        {
+          "name": "organization",
+          "label": "Organization",
+          "type": "text"
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "text"
+        },
+        {
+          "name": "phone",
+          "label": "Phone",
+          "type": "text"
+        },
+        {
+          "name": "phoneHint",
+          "label": "Phone hint",
+          "type": "text"
+        },
+        {
+          "name": "country",
+          "label": "Country",
+          "type": "text"
+        },
+        {
+          "name": "service",
+          "label": "Service",
+          "type": "text"
+        },
+        {
+          "name": "servicePlaceholder",
+          "label": "Service placeholder",
+          "type": "text"
+        },
+        {
+          "name": "serviceNotSure",
+          "label": "“Not sure” option",
+          "type": "text"
+        },
+        {
+          "name": "messageInquiry",
+          "label": "Message (inquiry)",
+          "type": "text"
+        },
+        {
+          "name": "messageConsultation",
+          "label": "Message (consultation)",
+          "type": "text"
+        },
+        {
+          "name": "messageHint",
+          "label": "Message hint",
+          "type": "text"
+        },
+        {
+          "name": "budget",
+          "label": "Budget",
+          "type": "text"
+        },
+        {
+          "name": "budgetHint",
+          "label": "Budget hint",
+          "type": "text"
+        },
+        {
+          "name": "preferredTimes",
+          "label": "Preferred times",
+          "type": "text"
+        },
+        {
+          "name": "preferredTimesHint",
+          "label": "Preferred times hint",
+          "type": "text"
+        },
+        {
+          "name": "contactMethod",
+          "label": "Contact method",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "consentInquiry",
+      "label": "Consent text (inquiry)",
+      "type": "textarea"
+    },
+    {
+      "name": "consentConsultation",
+      "label": "Consent text (consultation)",
+      "type": "textarea"
+    },
+    {
+      "name": "consentLink",
+      "label": "Consent link",
+      "type": "link"
+    },
+    {
+      "name": "reviewFields",
+      "label": "“Review the highlighted fields”",
+      "type": "text"
+    },
+    {
+      "name": "sendError",
+      "label": "Send failed",
+      "type": "textarea"
+    },
+    {
+      "name": "networkError",
+      "label": "No connection",
+      "type": "textarea"
+    },
+    {
+      "name": "submitInquiry",
+      "label": "Button (inquiry)",
+      "type": "text"
+    },
+    {
+      "name": "submitConsultation",
+      "label": "Button (consultation)",
+      "type": "text"
+    },
+    {
+      "name": "sending",
+      "label": "Button while sending",
+      "type": "text"
+    },
+    {
+      "name": "spamNote",
+      "label": "Note under the button",
+      "type": "text"
+    },
+    {
+      "name": "success",
+      "label": "After sending",
+      "type": "object",
+      "fields": [
+        {
+          "name": "eyebrow",
+          "label": "Small label",
+          "type": "text"
+        },
+        {
+          "name": "headingInquiry",
+          "label": "Heading (inquiry)",
+          "type": "text"
+        },
+        {
+          "name": "headingConsultation",
+          "label": "Heading (consultation)",
+          "type": "text"
+        },
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "textarea"
+        },
+        {
+          "name": "again",
+          "label": "“Send another” link",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

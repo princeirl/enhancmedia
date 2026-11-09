@@ -1,24 +1,26 @@
 {
   // Enhanc Media website — one Worker: static assets from `out/`, plus /api/contact.
+  // Built and deployed by Cloudflare Workers Builds from this repository (README → Deployment):
+  //   main          → production, www.enhancmedia.com
+  //   content-draft → a preview version, on its branch preview URL (admin panel saves land here)
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "enhancmedia-website",
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-01",
+  "preview_urls": true,
   "assets": {
     "directory": "./out",
     "binding": "ASSETS",
     "not_found_handling": "404-page",
     "run_worker_first": ["/api/*"]
   },
-  // Inquiries are delivered by email to a verified destination address on this account.
-  // Replace the address once the business mailbox is confirmed (README → "Inquiry form").
-  "send_email": [{ "name": "SEND_EMAIL", "destination_address": "inquiries@REPLACE-WITH-DOMAIN" }],
+  // Inquiries are sent by email to a verified destination address (CONTACT_TO).
+  "send_email": [{ "name": "SEND_EMAIL" }],
   "ratelimits": [{ "name": "CONTACT_LIMITER", "namespace_id": "1001", "simple": { "limit": 5, "period": 60 } }],
-  "vars": {
-    "CONTACT_TO": "inquiries@REPLACE-WITH-DOMAIN",
-    "CONTACT_FROM": "website@REPLACE-WITH-DOMAIN",
-    "ALLOWED_ORIGINS": "https://REPLACE-WITH-DOMAIN,https://www.REPLACE-WITH-DOMAIN"
-  },
-  // Secret, set with `wrangler secret put TURNSTILE_SECRET` — never committed.
+  // Variables and secrets are set in the Cloudflare dashboard (Worker → Settings → Variables and
+  // Secrets), never here. keep_vars stops a deploy from removing them. See README → "Inquiry form".
+  //   CONTACT_TO, CONTACT_FROM, ALLOWED_ORIGINS   (text)
+  //   TURNSTILE_SECRET                            (secret)
+  "keep_vars": true,
   "observability": { "enabled": true }
 }

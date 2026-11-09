@@ -1,0 +1,86 @@
+{
+  "$format": 1,
+  "id": "team",
+  "label": "Leadership team",
+  "group": "Collections",
+  "order": 30,
+  "kind": "list",
+  "file": "content/team.json",
+  "preview": "/leadership",
+  "item": {
+    "label": "Person",
+    "title": "name",
+    "key": "slug",
+    "fields": [
+      {
+        "name": "slug",
+        "label": "Address (slug)",
+        "type": "text",
+        "required": true,
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+        "help": "Lower-case words joined by hyphens. Changing it changes the page address."
+      },
+      {
+        "name": "status",
+        "label": "Status",
+        "type": "select",
+        "options": [
+          {
+            "value": "draft",
+            "label": "Draft — preview only"
+          },
+          {
+            "value": "published",
+            "label": "Published — on the live site"
+          }
+        ],
+        "help": "Only published items appear on www.enhancmedia.com."
+      },
+      {
+        "name": "name",
+        "label": "Name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "role",
+        "label": "Designation",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "photo",
+        "label": "Photograph",
+        "type": "image",
+        "nullable": true,
+        "help": "Portrait, 4:5, about 1200×1500."
+      },
+      {
+        "name": "bio",
+        "label": "Biography",
+        "type": "textarea",
+        "nullable": true
+      },
+      {
+        "name": "summary",
+        "label": "Short introduction",
+        "type": "textarea",
+        "nullable": true,
+        "help": "10–15 words."
+      },
+      {
+        "name": "linkedin",
+        "label": "Profile link",
+        "type": "url",
+        "nullable": true
+      },
+      {
+        "name": "note",
+        "label": "Internal note",
+        "type": "textarea",
+        "optional": true,
+        "help": "Never shown on the site."
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "seo": {
+    "title": "Industries",
+    "description": "Marketing, branding and communications for businesses, corporations, creators, public figures, political organizations, educational institutions and NGOs."
+  },
+  "hero": {
+    "eyebrow": "Industries",
+    "title": "Built for ambition. Designed for impact.",
+    "lead": "Each audience we serve has its own expectations, pressures and responsibilities. Our approach is adapted to each, never copied from one to the next.",
+    "art": 5
+  },
+  "itemLink": "Explore",
+  "other": {
+    "eyebrow": "Something else?",
+    "heading": "Your organization may not fit a category.",
+    "text": "Tell us what you do and what you need. We will tell you honestly whether we are the right partner.",
+    "link": {
+      "label": "Start a conversation",
+      "href": "/contact"
+    }
+  }
+}

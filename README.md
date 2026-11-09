@@ -28,7 +28,8 @@ files in `content/` of this repository, on the branch `content-draft`:
 2. The editor presses **Publish** → `content-draft` is merged into `main` → the live site
    rebuilds. Publish is refused while the preview of those changes is building or has failed.
 
-The admin, and the Worker's preview URLs, are behind Cloudflare Access: only listed email addresses get in.
+Editors sign in to the admin with their email and a one-time code. The draft preview is not
+indexed by search engines; to make it editors-only as well, see Deployment.
 
 ### Adding or changing a page — the rule
 
@@ -174,9 +175,10 @@ Settings → Build). No deploy credentials or variables live in GitHub.
 - A push to `main` (a Publish from the admin, or a code change) builds and deploys the live site.
 - A push to `content-draft` (a save in the admin) builds a preview build (drafts shown, never
   indexed) and uploads it as a preview version, at
-  `https://content-draft-enhancmedia-website.<account-subdomain>.workers.dev`. Turn on Cloudflare
-  Access for preview URLs (Worker → Settings → Domains & Routes → Preview URLs) so only editors
-  can open it.
+  `https://content-draft-enhancmedia-website.<account-subdomain>.workers.dev`. It is never indexed,
+  but anyone with the address can open it. To restrict it, turn on Cloudflare Access for preview
+  URLs (Worker → Settings → Domains & Routes → Preview URLs), or switch preview URLs off and
+  check drafts locally.
 - A build that fails the content check never deploys; the live site stays as it was.
 
 Manual deploys still work: `npm run deploy` (with the launch check) or `npx wrangler deploy`

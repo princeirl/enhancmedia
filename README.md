@@ -168,7 +168,7 @@ To connect a scheduling service:
 
 ## Deployment
 
-Cloudflare Workers Builds, connected to this repository (Worker `enhancmedia-website` →
+Cloudflare Workers Builds, connected to this repository (Worker `enhancmedia` →
 Settings → Build). No deploy credentials or variables live in GitHub.
 
 | Setting | Value |
@@ -176,13 +176,13 @@ Settings → Build). No deploy credentials or variables live in GitHub.
 | Production branch | `main` |
 | Build command | `npm run build:ci` |
 | Deploy command | `npm run deploy:ci` |
-| Non-production branch deploy command | `npm run deploy:ci` |
+| Non-production branch deploy command | `npm run deploy:ci` (not Cloudflare's default `npx wrangler preview` or `npx wrangler versions upload`) |
 | Builds for non-production branches | on (the admin's `content-draft`) |
 
 - A push to `main` (a Publish from the admin, or a code change) builds and deploys the live site.
 - A push to `content-draft` (a save in the admin) builds a preview build (drafts shown, never
   indexed) and uploads it as a preview version, at
-  `https://content-draft-enhancmedia-website.<account-subdomain>.workers.dev`. It is never indexed,
+  `https://content-draft-enhancmedia.<account-subdomain>.workers.dev`. It is never indexed,
   but anyone with the address can open it. To restrict it, turn on Cloudflare Access for preview
   URLs (Worker → Settings → Domains & Routes → Preview URLs), or switch preview URLs off and
   check drafts locally.

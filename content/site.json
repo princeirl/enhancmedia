@@ -19,7 +19,7 @@
   "social": [],
   "forms": {
     "endpoint": "/api/contact",
-    "turnstileSiteKey": null
+    "turnstileSiteKey": "0x4AAAAAAF5nvnqKGJw6oQ7F"
   },
   "booking": {
     "provider": null,

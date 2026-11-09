@@ -4,7 +4,7 @@
   //   main          → production, www.enhancmedia.com
   //   content-draft → a preview version, on its branch preview URL (admin panel saves land here)
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "enhancmedia-website",
+  "name": "enhancmedia",
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-01",
   "preview_urls": true,

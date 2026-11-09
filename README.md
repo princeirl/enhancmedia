@@ -187,6 +187,10 @@ Settings → Build). No deploy credentials or variables live in GitHub.
   URLs (Worker → Settings → Domains & Routes → Preview URLs), or switch preview URLs off and
   check drafts locally.
 - A build that fails the content check never deploys; the live site stays as it was.
+- If Cloudflare keeps its own defaults (`npm run build`, `npx wrangler preview`), drafts still work:
+  any branch but `main` builds in preview mode (`WORKERS_CI_BRANCH`), and `wrangler.jsonc` → `previews`
+  gives `wrangler preview` its own rate-limit counter. The draft address is then the one printed
+  at the end of the build log.
 
 Manual deploys still work: `npm run deploy` (with the launch check) or `npx wrangler deploy`
 after `npm run build`.

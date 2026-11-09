@@ -126,16 +126,21 @@ The browser checks every field before sending. The Worker then checks again and:
 - accepts requests only from our own domain (`ALLOWED_ORIGINS`);
 - requires JSON under 20 KB and rate-limits each IP address to 5 requests a minute;
 - uses a hidden honeypot field and a human verification check (Cloudflare Turnstile);
-- sends the inquiry as an email to the business mailbox, with Reply-To set to the visitor.
+- sends the inquiry as an email to the business mailbox, with Reply-To set to the visitor,
+  through an email API (`worker/mail.ts`: Resend, or Brevo if only its key is set). The same file
+  sends the admin panel's sign-in codes.
 
 Nothing is stored. If any configuration is missing, the form returns a polite "temporarily
 unavailable" message rather than failing silently.
 
 To set it up, once the domain and mailbox exist:
 
-1. Enable Email Routing on the domain and verify the destination mailbox.
-2. In the Cloudflare dashboard (Worker → Settings → Variables and Secrets) add the text variables
-   `CONTACT_TO` (the verified mailbox), `CONTACT_FROM` (an address on the domain) and
+1. In Resend, add and verify the domain `enhancmedia.com` (its DNS records go on a `send.`
+   sub-name and do not touch the domain's Zoho mail records), then create an API key with
+   *Sending access* for that domain.
+2. In the Cloudflare dashboard (Worker → Settings → Variables and Secrets) add the secret
+   `RESEND_API_KEY` and the text variables `CONTACT_TO` (the mailbox that receives inquiries),
+   `CONTACT_FROM` (an address on the verified domain, e.g. `website@enhancmedia.com`) and
    `ALLOWED_ORIGINS` (`https://www.enhancmedia.com,https://enhancmedia.com`). `wrangler.jsonc`
    has `keep_vars: true`, so deploys never remove them.
 3. Create a Turnstile widget for the domain. Put its **site key** in
@@ -144,8 +149,8 @@ To set it up, once the domain and mailbox exist:
    page, from the vault. It is never committed.
 
 For local testing, `.dev.vars` (git-ignored) holds the provider's public **test** keys. Build
-with `NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA`. Local emails are written to
-`.wrangler/tmp/email/` instead of being sent.
+with `NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA`. With a real `RESEND_API_KEY` in
+`.dev.vars`, local tests send real emails.
 
 ## Consultation booking
 
@@ -208,6 +213,6 @@ Still needed from the founder:
 Technical checks:
 
 - [ ] Privacy Policy and Terms reviewed by legal counsel
-- [ ] Email Routing, Turnstile and `wrangler.jsonc` configured; `npm run check:launch` passes
+- [ ] Resend domain, Turnstile and the dashboard variables configured; `npm run check:launch` passes
 - [ ] Performance and accessibility audit on the deployed preview, on real phones and desktops
 - [ ] Founder reviews every page of the preview build and gives final approval

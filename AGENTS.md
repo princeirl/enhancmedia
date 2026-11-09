@@ -10,3 +10,6 @@ component. `npm run check:content` enforces this and runs before every build.
 
 The admin's code changes only when a new kind of field is needed (`lib/schema.mjs`, kept
 byte-identical in both repositories).
+
+`worker/mail.ts` (the email module: inquiry form here, sign-in codes in the admin) is also
+byte-identical in both repositories.

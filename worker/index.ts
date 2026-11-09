@@ -5,14 +5,16 @@
  * which validates an inquiry, checks it for spam and delivers it as an email to the
  * business mailbox. Nothing is stored.
  *
- * Configuration (wrangler.jsonc + secrets): see README → "Inquiry form".
+ * Configuration: variables in the Cloudflare dashboard — see README → "Inquiry form".
+ * Email goes through an HTTP email API (worker/mail.ts: Resend, or Brevo).
  */
-import { EmailMessage } from "cloudflare:email";
 import { validateContact, type ContactInput } from "../lib/contact";
+import { mailProvider, sendMail } from "./mail";
 
 interface Env {
   ASSETS: Fetcher;
-  SEND_EMAIL?: SendEmail;
+  RESEND_API_KEY?: string; // secret
+  BREVO_API_KEY?: string; // secret, used if RESEND_API_KEY is not set
   CONTACT_LIMITER?: RateLimit;
   CONTACT_TO?: string;
   CONTACT_FROM?: string;
@@ -41,7 +43,7 @@ export default {
 
 async function handleContact(request: Request, env: Env): Promise<Response> {
   // Configuration must be complete before the form is accepted.
-  if (!env.SEND_EMAIL || !env.CONTACT_TO || !env.CONTACT_FROM || !env.TURNSTILE_SECRET) {
+  if (!mailProvider(env) || !env.CONTACT_TO || !env.CONTACT_FROM || !env.TURNSTILE_SECRET) {
     console.error("contact: not configured");
     return json({ message: "Our inquiry form is temporarily unavailable. Please try again later." }, 503);
   }
@@ -80,8 +82,19 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
   if (!(await verifyTurnstile(token, ip, env.TURNSTILE_SECRET)))
     return json({ message: "We could not verify that you are human. Please try again." }, 400);
 
-  const msg = new EmailMessage(env.CONTACT_FROM, env.CONTACT_TO, buildMime(result.data, env));
-  await env.SEND_EMAIL.send(msg);
+  const d = result.data;
+  const sent = await sendMail(env, {
+    from: env.CONTACT_FROM,
+    fromName: "Enhanc Media Website",
+    to: env.CONTACT_TO,
+    replyTo: d.email,
+    subject: subjectFor(d),
+    text: bodyFor(d),
+  });
+  if (!sent.ok) {
+    console.error("contact: email not sent", sent.error);
+    return json({ message: "We could not send your message just now. Please try again in a few minutes." }, 502);
+  }
   return json({ ok: true }, 200);
 }
 
@@ -98,16 +111,15 @@ async function verifyTurnstile(token: string, ip: string, secret: string): Promi
 }
 
 // ---------- Email ----------
-const noCrlf = (s: string) => s.replace(/[\r\n]+/g, " ").trim();
-const encodeHeader = (s: string) =>
-  /^[\x20-\x7E]*$/.test(s) ? s : `=?UTF-8?B?${btoa(String.fromCharCode(...new TextEncoder().encode(s)))}?=`;
-
-function buildMime(d: ContactInput, env: Env): string {
+function subjectFor(d: ContactInput): string {
   const kind = d.intent === "consultation" ? "Consultation request" : "New inquiry";
-  const subject = encodeHeader(noCrlf(`${kind}: ${d.name}${d.organization ? ` (${d.organization})` : ""} | ${d.service}`));
-  const domain = env.CONTACT_FROM!.split("@")[1] ?? "localhost";
-  const lines = [
-    `${kind} received through the website.`,
+  return `${kind}: ${d.name}${d.organization ? ` (${d.organization})` : ""} | ${d.service}`;
+}
+
+function bodyFor(d: ContactInput): string {
+  const kind = d.intent === "consultation" ? "Consultation request" : "New inquiry";
+  return [
+    `${kind} received through the website. Reply to this email to answer ${d.name} directly.`,
     "",
     `Name:               ${d.name}`,
     `Organization:       ${d.organization || "—"}`,
@@ -124,23 +136,7 @@ function buildMime(d: ContactInput, env: Env): string {
     d.message,
     "",
     `Received: ${new Date().toISOString()}`,
-  ];
-  // Base64 body: safe for any characters and line lengths.
-  const bodyB64 = btoa(String.fromCharCode(...new TextEncoder().encode(lines.join("\r\n"))))
-    .replace(/.{76}/g, "$&\r\n");
-  return [
-    `From: ${encodeHeader("Enhanc Media Website")} <${env.CONTACT_FROM}>`,
-    `To: <${env.CONTACT_TO}>`,
-    `Reply-To: <${noCrlf(d.email)}>`,
-    `Subject: ${subject}`,
-    `Date: ${new Date().toUTCString()}`,
-    `Message-ID: <${crypto.randomUUID()}@${domain}>`,
-    "MIME-Version: 1.0",
-    "Content-Type: text/plain; charset=utf-8",
-    "Content-Transfer-Encoding: base64",
-    "",
-    bodyB64,
-  ].join("\r\n");
+  ].join("\n");
 }
 
 function json(body: unknown, status: number, headers: Record<string, string> = {}): Response {

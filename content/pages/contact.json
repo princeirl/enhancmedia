@@ -5,16 +5,16 @@
   },
   "hero": {
     "eyebrow": "Contact",
-    "title": "Let’s start with a conversation.    hello@enhancmedia.com",
+    "title": "Let’s start with a conversation.",
     "lead": "Tell us about your organization, your objectives and what you would like to achieve. We read every inquiry and respond using your preferred contact method.",
     "art": 2
   },
   "direct": {
     "eyebrow": "Direct contact",
-    "email": "hello@enhancmedia.com",
-    "phone": "9580390260",
+    "email": "Email",
+    "phone": "Telephone",
     "whatsapp": "WhatsApp",
-    "fallback": "The quickest way to reach our team is through the contact form or by emailing us directly at hello@enhancmedia.com Your inquiry will go straight to our team."
+    "fallback": "The quickest way to reach our team is through the contact form or by emailing us directly. Your inquiry will go straight to our team."
   },
   "officeLabel": "Office",
   "consultation": {

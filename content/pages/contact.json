@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Contact Us",
-    "description": "Tell Enhanc Media about your project, challenge or ambition. We respond to every genuine inquiry.\nE-mail - Hello@enhancmedia.com"
+    "description": "Tell Enhanc Media about your project, challenge or ambition. We respond to every genuine inquiry."
   },
   "hero": {
     "eyebrow": "Contact",
@@ -14,7 +14,7 @@
     "email": "Email",
     "phone": "Telephone",
     "whatsapp": "WhatsApp",
-    "fallback": "The form is the quickest way to reach us. Your inquiry goes directly to our team."
+    "fallback": "The quickest way to reach our team is through the contact form or by emailing us directly at hello@enhancmedia.com. Your inquiry will go straight to our team."
   },
   "officeLabel": "Office",
   "consultation": {

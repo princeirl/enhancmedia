@@ -16,7 +16,12 @@
     "address": null,
     "hours": null
   },
-  "social": [],
+  "social": [
+    {
+      "label": "Instagram ",
+      "url": "https://www.instagram.com/enhanc.media?exln=MXZ5NDV3d2ZyY3g1cA=="
+    }
+  ],
   "forms": {
     "endpoint": "/api/contact",
     "turnstileSiteKey": "0x4AAAAAAF5nvnqKGJw6oQ7F"

@@ -6,17 +6,22 @@
   "description": "Enhanc Media is a strategic marketing, branding and communications agency working with businesses, individuals and organizations across India and international markets.",
   "founder": "Prince Yadav",
   "brand": {
-    "logoOnLight": null,
-    "logoOnDark": null
+    "logoOnLight": "/uploads/2026/11/1000211191-3ab9bac0.png",
+    "logoOnDark": "/uploads/2026/11/1000211193-447edd32.png"
   },
   "contact": {
-    "email": null,
-    "phone": null,
+    "email": "hello@enhancmedia.com",
+    "phone": "9580390260",
     "whatsapp": null,
     "address": null,
     "hours": null
   },
-  "social": [],
+  "social": [
+    {
+      "label": "Instagram ",
+      "url": "https://www.instagram.com/enhanc.media?exln=MXZ5NDV3d2ZyY3g1cA=="
+    }
+  ],
   "forms": {
     "endpoint": "/api/contact",
     "turnstileSiteKey": "0x4AAAAAAF5nvnqKGJw6oQ7F"
